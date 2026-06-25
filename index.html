@@ -3,363 +3,315 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="فؤاد سندي — محلل مالي واستراتيجي رقمي. الهوية الرقمية الرسمية." />
-  <meta name="keywords" content="فؤاد سندي, محلل مالي, TradingView, Foued Sendi" />
-  <meta name="author" content="Foued Sendi" />
-  <meta property="og:title" content="فؤاد سندي — AURELIA Identity" />
-  <meta property="og:description" content="محلل مالي واستراتيجي رقمي. رابط واحد. حضور لا يُنسى." />
-  <meta property="og:url" content="https://aurelia-digital-pro.github.io/aurelia-identity-v1" />
-  <title>فؤاد سندي — AURELIA Identity</title>
+  <meta name="description" content="AURELIA Identity Generator — أنشئ هويتك الرقمية الاحترافية برابط واحد" />
+  <title>AURELIA Identity Generator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ══════════════ NAV ══════════════ -->
-<nav class="nav" id="nav">
-  <div class="nav-wrap">
-    <a href="#" class="logo">
+<!-- ══ FORM MODE (يظهر عند فتح الرابط بدون بيانات) ══ -->
+<div id="formMode">
+
+  <nav class="nav">
+    <div class="nav-wrap">
+      <span class="logo"><span class="logo-icon">♛</span> AURELIA <strong>ID</strong></span>
+      <span class="nav-badge">Generator v2.0</span>
+    </div>
+  </nav>
+
+  <div class="form-hero">
+    <div class="fh-inner">
+      <span class="form-tag">✦ أنشئ هويتك الآن</span>
+      <h1>AURELIA Identity Generator</h1>
+      <p>أدخل بياناتك وستحصل على رابط هوية رقمية احترافية جاهز للمشاركة فوراً</p>
+    </div>
+  </div>
+
+  <div class="form-wrap">
+    <form id="identityForm">
+
+      <!-- ═══ الهوية الأساسية ═══ -->
+      <div class="form-section">
+        <h2 class="fs-title"><span>01</span> الهوية الشخصية</h2>
+        <div class="fields-grid">
+          <div class="field-group">
+            <label>الاسم الكامل *</label>
+            <input type="text" id="f-name" placeholder="مثال: أحمد محمد علي" required />
+          </div>
+          <div class="field-group">
+            <label>المسمى الوظيفي / التخصص *</label>
+            <input type="text" id="f-title" placeholder="مثال: مصمم جرافيك | مطور ويب" required />
+          </div>
+          <div class="field-group">
+            <label>الموقع الجغرافي</label>
+            <input type="text" id="f-location" placeholder="مثال: الرياض، السعودية" />
+          </div>
+          <div class="field-group">
+            <label>رابط الصورة الشخصية</label>
+            <input type="url" id="f-photo" placeholder="https://example.com/photo.jpg" />
+            <small>💡 ارفع صورتك على imgbb.com أو imgur.com وانسخ الرابط</small>
+          </div>
+          <div class="field-group full">
+            <label>نبذة تعريفية مختصرة *</label>
+            <textarea id="f-bio" rows="3" placeholder="اكتب جملة أو جملتين تعريف عنك باحترافية..." required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ التواصل ═══ -->
+      <div class="form-section">
+        <h2 class="fs-title"><span>02</span> معلومات التواصل</h2>
+        <div class="fields-grid">
+          <div class="field-group">
+            <label>واتساب</label>
+            <input type="text" id="f-wa" placeholder="21624764833 (بدون + أو 00)" />
+            <small>أرقام فقط — مثال: 21624764833</small>
+          </div>
+          <div class="field-group">
+            <label>البريد الإلكتروني</label>
+            <input type="email" id="f-email" placeholder="example@gmail.com" />
+          </div>
+          <div class="field-group">
+            <label>X / Twitter</label>
+            <input type="text" id="f-x" placeholder="@username" />
+          </div>
+          <div class="field-group">
+            <label>LinkedIn</label>
+            <input type="text" id="f-li" placeholder="linkedin.com/in/username" />
+          </div>
+          <div class="field-group">
+            <label>الموقع الإلكتروني</label>
+            <input type="url" id="f-web" placeholder="https://yourwebsite.com" />
+          </div>
+          <div class="field-group">
+            <label>رقم الهاتف (للاتصال)</label>
+            <input type="text" id="f-phone" placeholder="+216 24 764 833" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ الخدمات ═══ -->
+      <div class="form-section">
+        <h2 class="fs-title"><span>03</span> خدماتي (3 خدمات)</h2>
+        <div class="services-inputs">
+          <div class="service-input-row" data-svc="1">
+            <span class="svc-num">١</span>
+            <div class="svc-fields">
+              <input type="text" id="s1-title" placeholder="اسم الخدمة — مثال: تصميم الهوية البصرية" />
+              <textarea id="s1-desc" rows="2" placeholder="وصف مختصر للخدمة..."></textarea>
+            </div>
+          </div>
+          <div class="service-input-row" data-svc="2">
+            <span class="svc-num">٢</span>
+            <div class="svc-fields">
+              <input type="text" id="s2-title" placeholder="اسم الخدمة — مثال: تطوير المواقع" />
+              <textarea id="s2-desc" rows="2" placeholder="وصف مختصر للخدمة..."></textarea>
+            </div>
+          </div>
+          <div class="service-input-row" data-svc="3">
+            <span class="svc-num">٣</span>
+            <div class="svc-fields">
+              <input type="text" id="s3-title" placeholder="اسم الخدمة — مثال: الاستشارات" />
+              <textarea id="s3-desc" rows="2" placeholder="وصف مختصر للخدمة..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ الأعمال ═══ -->
+      <div class="form-section">
+        <h2 class="fs-title"><span>04</span> أعمالي (3 مشاريع)</h2>
+        <div class="projects-inputs">
+          <div class="project-input-row">
+            <span class="svc-num">١</span>
+            <div class="svc-fields">
+              <input type="text" id="p1-name" placeholder="اسم المشروع" />
+              <input type="url" id="p1-img" placeholder="رابط صورة المشروع (اختياري)" />
+              <input type="text" id="p1-desc" placeholder="وصف مختصر" />
+              <input type="url" id="p1-link" placeholder="رابط المشروع (اختياري)" />
+            </div>
+          </div>
+          <div class="project-input-row">
+            <span class="svc-num">٢</span>
+            <div class="svc-fields">
+              <input type="text" id="p2-name" placeholder="اسم المشروع" />
+              <input type="url" id="p2-img" placeholder="رابط صورة المشروع (اختياري)" />
+              <input type="text" id="p2-desc" placeholder="وصف مختصر" />
+              <input type="url" id="p2-link" placeholder="رابط المشروع (اختياري)" />
+            </div>
+          </div>
+          <div class="project-input-row">
+            <span class="svc-num">٣</span>
+            <div class="svc-fields">
+              <input type="text" id="p3-name" placeholder="اسم المشروع" />
+              <input type="url" id="p3-img" placeholder="رابط صورة المشروع (اختياري)" />
+              <input type="text" id="p3-desc" placeholder="وصف مختصر" />
+              <input type="url" id="p3-link" placeholder="رابط المشروع (اختياري)" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ زر الإنشاء ═══ -->
+      <div class="form-submit">
+        <button type="submit" class="gen-btn">
+          <span class="btn-icon">♛</span>
+          أنشئ هويتي الرقمية الآن
+        </button>
+        <p class="form-note">سيتم إنشاء رابط خاص بك — انسخه وشاركه مع أي شخص</p>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="gen-features">
+    <div class="container">
+      <div class="gf-grid">
+        <div class="gf-item">
+          <span>🆓</span>
+          <strong>مجاناً تماماً</strong>
+          <p>لا اشتراك، لا دفع، لا حساب</p>
+        </div>
+        <div class="gf-item">
+          <span>⚡</span>
+          <strong>فوري</strong>
+          <p>رابطك جاهز في ثوانٍ</p>
+        </div>
+        <div class="gf-item">
+          <span>🔒</span>
+          <strong>خصوصية كاملة</strong>
+          <p>بياناتك في رابطك فقط — لا خوادم</p>
+        </div>
+        <div class="gf-item">
+          <span>📱</span>
+          <strong>يعمل على كل الأجهزة</strong>
+          <p>هاتف، تابلت، كمبيوتر</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-copy">
       <span class="logo-icon">♛</span>
-      <span class="logo-text">AURELIA <strong>ID</strong></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">الرئيسية</a></li>
-      <li><a href="#about">نبذة</a></li>
-      <li><a href="#services">الخدمات</a></li>
-      <li><a href="#projects">الأعمال</a></li>
-      <li><a href="#contact">تواصل</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="القائمة">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- ══════════════ HERO ══════════════ -->
-<section class="hero" id="home">
-  <div class="container hero-grid">
-
-    <!-- Left: Content -->
-    <div class="hero-content">
-      <span class="hero-tag">✦ محلل مالي واستراتيجي رقمي</span>
-      <h1 class="hero-name">فؤاد سندي</h1>
-      <p class="hero-title">خبير الأسواق المالية والهوية الرقمية</p>
-      <p class="hero-loc">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        تونس، المغرب العربي
-      </p>
-      <p class="hero-desc">
-        أبني أنظمة تحليلية رقمية تُحوّل الفرص إلى نتائج حقيقية.<br />
-        خبرة في الأسواق المالية، البراندينق، والاستراتيجيات القابلة للتوسّع.
-      </p>
-
-      <!-- Social Icons -->
-      <div class="hero-socials">
-        <a href="tel:+21624764833" class="social-btn" title="اتصال">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.63 1.12 2 2 0 012.62 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          <span>اتصال</span>
-        </a>
-        <a href="https://wa.me/21624764833" target="_blank" class="social-btn" title="واتساب">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          <span>واتساب</span>
-        </a>
-        <a href="https://x.com/foued_sendi" target="_blank" class="social-btn" title="X / Twitter">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          <span>X</span>
-        </a>
-        <a href="https://ar.tradingview.com/script/TTi8QyP3" target="_blank" class="social-btn" title="TradingView">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          <span>TradingView</span>
-        </a>
-        <a href="mailto:fouedsendi-85@gmail.com" class="social-btn" title="البريد">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>البريد</span>
-        </a>
-        <a href="media-kit.html" class="social-btn" title="Media Kit">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <span>Media Kit</span>
-        </a>
-      </div>
-
-      <a href="https://wa.me/21624764833?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدماتك" target="_blank" class="cta-btn">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        تواصل معي الآن
-      </a>
+      AURELIA Identity Generator v2.0 — © 2026 جميع الحقوق محفوظة
+      <br /><small><a href="privacy.html">الخصوصية</a> · <a href="terms.html">الشروط</a> · <a href="dmca.html">DMCA</a></small>
     </div>
+  </footer>
 
-    <!-- Right: Photo -->
-    <div class="hero-photo-wrap">
-      <div class="photo-ring">
-        <div class="photo-circle">
-          <img src="assets/avatar.jpg" alt="فؤاد سندي"
-            onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='flex'" />
-          <div class="avatar-fallback" id="avatarFallback">ف</div>
-        </div>
-      </div>
-      <div class="photo-badge">متاح للتعاون ✦</div>
-    </div>
+</div><!-- /formMode -->
 
-  </div>
-</section>
+<!-- ══ VIEW MODE (يظهر عند فتح رابط #data=...) ══ -->
+<div id="viewMode" style="display:none">
 
-<!-- ══════════════ PROJECTS ══════════════ -->
-<section class="section" id="projects">
-  <div class="container">
-    <div class="section-label">أعمالي / خدماتي</div>
-    <div class="projects-grid">
-
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <img src="assets/project-1.jpg" alt="نظام تحليل الأسواق" onerror="this.parentElement.innerHTML='<div class=proj-ph>📊</div>'" />
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">تحليل مالي</span>
-          <h3>نظام تحليل الأسواق</h3>
-          <a href="https://ar.tradingview.com/script/TTi8QyP3" target="_blank" class="proj-link">
-            عرض ←
-          </a>
-        </div>
-      </div>
-
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <img src="assets/project-2.jpg" alt="AURELIA Identity" onerror="this.parentElement.innerHTML='<div class=proj-ph>♛</div>'" />
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">هوية رقمية</span>
-          <h3>AURELIA Identity</h3>
-          <a href="https://aurelia-digital-pro.github.io/aurelia-identity-v1" target="_blank" class="proj-link">
-            عرض ←
-          </a>
-        </div>
-      </div>
-
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <img src="assets/project-3.jpg" alt="خطة براندينق" onerror="this.parentElement.innerHTML='<div class=proj-ph>🎯</div>'" />
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">استراتيجية</span>
-          <h3>خطة براندينق متكاملة</h3>
-          <a href="https://wa.me/21624764833" target="_blank" class="proj-link">استفسر ←</a>
-        </div>
-      </div>
-
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <img src="assets/project-4.jpg" alt="منظومة المحتوى" onerror="this.parentElement.innerHTML='<div class=proj-ph>📱</div>'" />
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">محتوى رقمي</span>
-          <h3>منظومة المحتوى التحليلي</h3>
-          <a href="https://x.com/foued_sendi" target="_blank" class="proj-link">تابع ←</a>
-        </div>
-      </div>
-
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <img src="assets/project-5.jpg" alt="دورة التحليل التقني" onerror="this.parentElement.innerHTML='<div class=proj-ph>📈</div>'" />
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">تعليم مالي</span>
-          <h3>دورة التحليل التقني</h3>
-          <a href="https://wa.me/21624764833?text=أريد%20الاستفسار%20عن%20الدورة" target="_blank" class="proj-link">استفسر ←</a>
-        </div>
-      </div>
-
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <img src="assets/project-6.jpg" alt="جلسات استشارة" onerror="this.parentElement.innerHTML='<div class=proj-ph>🤝</div>'" />
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">استشارات</span>
-          <h3>جلسات الاستشارة الخاصة</h3>
-          <a href="https://wa.me/21624764833?text=أريد%20حجز%20جلسة%20استشارة" target="_blank" class="proj-link">احجز ←</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════ STATS ══════════════ -->
-<section class="stats-section">
-  <div class="container">
-    <div class="stats-row">
-      <div class="stat reveal">
-        <span class="stat-num" data-target="150">0</span><span class="stat-plus">+</span>
-        <p>عميل راضٍ</p>
-      </div>
-      <div class="stat-div"></div>
-      <div class="stat reveal">
-        <span class="stat-num" data-target="98">0</span><span class="stat-plus">%</span>
-        <p>موثوقية النظام</p>
-      </div>
-      <div class="stat-div"></div>
-      <div class="stat reveal">
-        <span class="stat-text">24/7</span>
-        <p>دعم ومتابعة</p>
-      </div>
-      <div class="stat-div"></div>
-      <div class="stat reveal">
-        <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
-        <p>رضا العملاء</p>
+  <nav class="nav nav-view">
+    <div class="nav-wrap">
+      <span class="logo"><span class="logo-icon">♛</span> AURELIA <strong>ID</strong></span>
+      <div class="nav-view-actions">
+        <a href="index.html" class="nav-edit-btn">✏ أنشئ هويتك</a>
+        <button class="nav-share-btn" id="shareBtn">🔗 نسخ الرابط</button>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ══════════════ FEATURES ══════════════ -->
-<section class="features-section">
-  <div class="container">
-    <div class="features-row">
-      <div class="feature reveal">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <span>تحديث فوري</span>
-        <p>كل تغيير يظهر مباشرة في الصفحة</p>
+  <!-- HERO -->
+  <section class="v-hero">
+    <div class="container v-hero-grid">
+      <div class="v-hero-content">
+        <span class="hero-tag" id="v-tag">✦ هوية رقمية احترافية</span>
+        <h1 class="hero-name" id="v-name">—</h1>
+        <p class="hero-title" id="v-title">—</p>
+        <p class="hero-loc" id="v-loc" style="display:none">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="v-loc-text"></span>
+        </p>
+        <p class="hero-desc" id="v-bio">—</p>
+        <div class="hero-socials" id="v-socials"></div>
+        <div id="v-cta-wrap"></div>
       </div>
-      <div class="feature reveal">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <div class="hero-photo-wrap">
+        <div class="photo-ring">
+          <div class="photo-circle">
+            <img id="v-photo" src="" alt="صورة شخصية" onerror="this.style.display='none';document.getElementById('v-avatar-fb').style.display='flex'" />
+            <div class="avatar-fallback" id="v-avatar-fb"></div>
+          </div>
         </div>
-        <span>متوافقة بالكامل</span>
-        <p>تعمل على جميع الأجهزة والشاشات</p>
-      </div>
-      <div class="feature reveal">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-        </div>
-        <span>ألوان متعددة</span>
-        <p>اختر ألوان براندك بسهولة</p>
-      </div>
-      <div class="feature reveal">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        </div>
-        <span>تصدير HTML</span>
-        <p>ملف جاهز للنشر مباشرة</p>
-      </div>
-      <div class="feature reveal">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        </div>
-        <span>رفع الصور</span>
-        <p>رفع صورك بسهولة Drag & Drop</p>
-      </div>
-      <div class="feature reveal">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-        </div>
-        <span>روابط مباشرة</span>
-        <p>كل روابط التواصل تعمل فوراً</p>
+        <div class="photo-badge">هوية رقمية ✦</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════ ABOUT ══════════════ -->
-<section class="section about-section" id="about">
-  <div class="container about-grid">
-    <div class="about-card reveal">
-      <div class="about-icon">📊</div>
-      <h3>التحليل المالي التقني</h3>
-      <p>تحليل الأسواق المالية باستخدام TradingView والمؤشرات المتقدمة للكشف عن الفرص الاستثمارية.</p>
+  <!-- SERVICES -->
+  <section class="v-section v-alt" id="v-services-sec" style="display:none">
+    <div class="container">
+      <div class="section-label">الخدمات</div>
+      <div class="v-services-grid" id="v-services"></div>
     </div>
-    <div class="about-card reveal">
-      <div class="about-icon">♛</div>
-      <h3>الهوية الرقمية الفاخرة</h3>
-      <p>بناء صفحات هوية رقمية احترافية تعكس براندك الشخصي وتجذب الفرص والتعاون.</p>
-    </div>
-    <div class="about-card reveal">
-      <div class="about-icon">🎯</div>
-      <h3>الاستراتيجية الرقمية</h3>
-      <p>تطوير استراتيجيات رقمية متكاملة للنمو وبناء الحضور الرقمي القوي والمستدام.</p>
-    </div>
-    <div class="about-card reveal">
-      <div class="about-icon">🤝</div>
-      <h3>الاستشارات والتدريب</h3>
-      <p>جلسات استشارية مخصصة في التحليل المالي والتسويق الرقمي وبناء المشاريع.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════ CONTACT ══════════════ -->
-<section class="section contact-section" id="contact">
-  <div class="container">
-    <div class="section-label">تواصل معي</div>
-    <h2 class="section-title">لنبدأ معًا</h2>
-    <p class="section-sub">أُجيب على جميع الرسائل خلال 24 ساعة</p>
-
-    <div class="contact-cards">
-      <a href="https://wa.me/21624764833" target="_blank" class="contact-card primary reveal">
-        <div class="cc-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </div>
-        <div>
-          <h4>واتساب</h4>
-          <span>+216 24 764 833</span>
-          <em>الأسرع استجابةً</em>
-        </div>
-      </a>
-      <a href="mailto:fouedsendi-85@gmail.com" class="contact-card reveal">
-        <div class="cc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div>
-          <h4>البريد الإلكتروني</h4>
-          <span>fouedsendi-85@gmail.com</span>
-        </div>
-      </a>
-      <a href="https://x.com/foued_sendi" target="_blank" class="contact-card reveal">
-        <div class="cc-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </div>
-        <div>
-          <h4>X / Twitter</h4>
-          <span>@foued_sendi</span>
-        </div>
-      </a>
-      <a href="https://ar.tradingview.com/script/TTi8QyP3" target="_blank" class="contact-card reveal">
-        <div class="cc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <div>
-          <h4>TradingView</h4>
-          <span>سكريبت التحليل التقني</span>
-        </div>
-      </a>
+  <!-- PROJECTS -->
+  <section class="v-section" id="v-projects-sec" style="display:none">
+    <div class="container">
+      <div class="section-label">الأعمال</div>
+      <div class="v-projects-grid" id="v-projects"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════ FOOTER ══════════════ -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
+  <!-- STRENGTHS (ثابتة) -->
+  <section class="v-section v-alt strengths-sec">
+    <div class="container">
+      <div class="section-label">المميزات</div>
+      <div class="strengths-grid">
+        <div class="str-card">
+          <div class="str-icon">🆓</div>
+          <h4>استضافة مجانية</h4>
+          <p>يعمل على GitHub Pages بدون أي تكلفة</p>
+        </div>
+        <div class="str-card">
+          <div class="str-icon">📱</div>
+          <h4>تصميم متجاوب</h4>
+          <p>متوافق مع الهاتف والتابلت والكمبيوتر</p>
+        </div>
+        <div class="str-card">
+          <div class="str-icon">⚡</div>
+          <h4>تحديث فوري</h4>
+          <p>تعديل البيانات وإنشاء رابط جديد فوراً</p>
+        </div>
+        <div class="str-card">
+          <div class="str-icon">🔗</div>
+          <h4>روابط مباشرة</h4>
+          <p>واتساب، إيميل، شبكات اجتماعية في مكان واحد</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="v-section" id="v-contact-sec">
+    <div class="container">
+      <div class="section-label">تواصل</div>
+      <div class="v-contact-grid" id="v-contacts"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER VIEW -->
+  <footer class="footer">
+    <div class="footer-copy">
       <span class="logo-icon">♛</span>
-      <span class="logo-text">AURELIA <strong>ID</strong></span>
-      <p>هوية رقمية احترافية فاخرة</p>
-      <small>One Link. Lasting Impression.</small>
+      تم إنشاء هذه الهوية بـ AURELIA Identity Generator
+      <br />
+      <a href="index.html" class="footer-gen-link">أنشئ هويتك المجانية الآن ←</a>
+      <br /><small><a href="privacy.html">الخصوصية</a> · <a href="terms.html">الشروط</a></small>
     </div>
-    <div class="footer-nav">
-      <a href="#home">الرئيسية</a>
-      <a href="#projects">الأعمال</a>
-      <a href="media-kit.html">Media Kit</a>
-      <a href="#contact">تواصل</a>
-    </div>
-    <div class="footer-legal">
-      <a href="privacy.html">الخصوصية</a>
-      <a href="terms.html">الشروط</a>
-      <a href="dmca.html">DMCA</a>
-    </div>
-  </div>
-  <div class="footer-copy">
-    <p>© 2026 فؤاد سندي — AURELIA Identity. جميع الحقوق محفوظة.</p>
-  </div>
-</footer>
+  </footer>
+
+  <!-- SHARE TOAST -->
+  <div class="toast" id="toast">✓ تم نسخ الرابط!</div>
+
+</div><!-- /viewMode -->
 
 <script src="script.js"></script>
 </body>

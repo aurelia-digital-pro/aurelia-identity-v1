@@ -1,0 +1,576 @@
+AURELIA Identity Generator v2.0
+
+FINAL LOCKED SPECIFICATION + FINAL CODING EXECUTION PLAN 🔒
+
+الحالة: Final Locked Specification
+المرجع الوحيد للتنفيذ
+نوع الوثيقة: Product Constitution + Technical Execution Guide
+
+⸻
+
+PART 1 — PRODUCT CONSTITUTION
+
+1. تعريف المنتج النهائي
+
+الاسم الرسمي:
+
+AURELIA Identity Generator v2.0
+
+نوع المنتج:
+
+Static Digital Identity Template
+
+الفكرة الأساسية:
+
+AURELIA Identity Generator هو قالب صفحة هوية رقمية احترافي جاهز.
+
+يقوم بتحويل المعلومات الأساسية لأي شخص أو نشاط إلى صفحة رقمية واحدة تمثله أمام العالم.
+
+ليس موقعًا معقدًا.
+
+ليس SaaS.
+
+ليس منصة إدارة مستخدمين.
+
+هو:
+
+Digital Identity Product — Ready to Customize & Deploy
+
+⸻
+
+2. الرؤية
+
+بناء طريقة بسيطة واحترافية لأي شخص لإنشاء حضور رقمي واضح من خلال رابط واحد.
+
+القيمة الأساسية:
+
+هوية رقمية منظمة، نظيفة، وقابلة للمشاركة.
+
+⸻
+
+3. المستخدمون المستهدفون
+
+يخدم:
+
+* مستقلين
+* طلاب
+* مصممين
+* مبرمجين
+* مستشارين
+* أطباء
+* مدربين
+* أصحاب مشاريع
+* شركات صغيرة
+* أي شخص يحتاج حضورًا رقميًا
+
+⸻
+
+4. قواعد AURELIA الأساسية
+
+ممنوع:
+
+❌ بيانات وهمية
+❌ أرقام غير مثبتة
+❌ شهادات غير حقيقية
+❌ وعود بالربح
+❌ ادعاءات نجاح
+
+مسموح:
+
+✅ وصف حقيقي
+✅ تصميم احترافي
+✅ عرض مهارات
+✅ عرض أعمال
+✅ روابط شخصية
+
+⸻
+
+PART 2 — CURRENT GITHUB STATE & TRANSFORMATION
+
+الوضع الحالي
+
+المشروع موجود:
+
+Repository:
+
+aurelia-identity-v1
+
+الحالة:
+
+✅ منشور على GitHub Pages
+✅ الرابط يعمل
+✅ يوجد index.html
+✅ الملفات موجودة
+
+⸻
+
+المطلوب
+
+تحويل المشروع من:
+
+Static Personal Profile
+
+إلى:
+
+Reusable Identity Generator Template
+
+⸻
+
+العناصر التي يجب حذفها
+
+من الصفحة الحالية:
+
+الهوية الثابتة
+
+❌ اسم فؤاد سندي
+
+❌ المسمى الشخصي القديم
+
+❌ الصورة الرمزية الثابتة
+
+❌ أي معلومات شخصية
+
+⸻
+
+الإحصائيات
+
+يحذف:
+
+❌ العملاء
+
+❌ الأرقام
+
+❌ النسب
+
+❌ الإنجازات غير المثبتة
+
+⸻
+
+المحتوى القديم
+
+يحذف:
+
+❌ أي قسم مبني على بروفايل شخص واحد
+
+ويتحول إلى:
+
+Template فارغ.
+
+⸻
+
+PART 3 — FINAL PRODUCT STRUCTURE
+
+الصفحة الرئيسية
+
+الحالة الأولى:
+
+عند فتح الرابط بدون بيانات:
+
+يظهر:
+
+AURELIA Identity Generator
+
+العنوان:
+
+أنشئ هويتك الرقمية الاحترافية
+
+ثم:
+
+نموذج إدخال.
+
+⸻
+
+الحالة الثانية:
+
+بعد إدخال البيانات:
+
+يتم إنشاء:
+
+Digital Identity Page
+
+خاصة بالمستخدم.
+
+⸻
+
+PART 4 — FINAL UI DESIGN
+
+الأسلوب
+
+Light Luxury
+
+⸻
+
+الألوان
+
+Primary:
+
+White
+
+Gold:
+
+#C9A961
+
+Text:
+
+Black
+
+⸻
+
+القاعدة:
+
+صفحة واحدة.
+
+بدون Scroll.
+
+ارتفاع:
+
+100vh
+
+⸻
+
+التخطيط النهائي
+
+--------------------------------
+AURELIA Live Info
+--------------------------------
+[ Photo ]     Name
+              Professional Title
+              Short Bio
+              Social Links
+              Create Identity Button
+--------------------------------
+[ Service 1 ]
+[ Service 2 ]
+[ Service 3 ]
+--------------------------------
+[ Strength 1 ]
+[ Strength 2 ]
+[ Strength 3 ]
+[ Strength 4 ]
+--------------------------------
+
+⸻
+
+PART 5 — FINAL MODULES
+
+MODULE 1 — Identity Module
+
+الحقول:
+
+* Profile Image
+* Full Name
+* Professional Title
+* Location
+* Short Bio
+
+⸻
+
+MODULE 2 — Services Module
+
+عدد الخدمات:
+
+3 فقط
+
+كل خدمة:
+
+* Title
+* Description
+
+⸻
+
+MODULE 3 — Portfolio Module
+
+عدد المشاريع:
+
+3
+
+كل مشروع:
+
+* Image
+* Name
+* Description
+
+⸻
+
+MODULE 4 — Strength Module
+
+4 نقاط ثابتة:
+
+1
+
+استضافة مجانية
+
+يعمل على GitHub Pages
+
+⸻
+
+2
+
+تصميم متجاوب
+
+متوافق مع الهاتف والكمبيوتر
+
+⸻
+
+3
+
+تحديث فوري
+
+تعديل البيانات عبر الرابط
+
+⸻
+
+4
+
+روابط مباشرة
+
+واتساب، إيميل، شبكات اجتماعية
+
+⸻
+
+MODULE 5 — Contact Module
+
+يدعم:
+
+* WhatsApp
+* Email
+* X
+* LinkedIn
+* Website
+* Phone
+
+⸻
+
+PART 6 — CORE DATA SYSTEM
+
+الرابط الأساسي
+
+aurelia-identity-v1/
+
+هو:
+
+Template فارغ.
+
+⸻
+
+بعد إنشاء الهوية
+
+يتم إنشاء:
+
+/#data=encoded-data
+
+⸻
+
+طريقة العمل:
+
+1. المستخدم يملأ النموذج.
+2. JavaScript يحول البيانات إلى encoded data.
+3. يتم إنشاء الرابط.
+4. عند فتح الرابط:
+    * يقرأ البيانات.
+    * يعرض الهوية.
+
+⸻
+
+PART 7 — FILE STRUCTURE
+
+الهيكل النهائي:
+
+aurelia-identity-v1/
+│
+├── index.html
+│
+├── style.css
+│
+├── script.js
+│
+├── assets/
+│
+├── media-kit.html
+│
+├── privacy.html
+│
+├── terms.html
+│
+└── dmca.html
+
+⸻
+
+PART 8 — FINAL CODING STEPS ⚙️
+
+STEP 1 — Audit
+
+فحص:
+
+* index.html
+* style.css
+* script.js
+* assets
+
+تحديد:
+
+* ما يحذف
+* ما يبقى
+
+⸻
+
+STEP 2 — Clean Identity
+
+تنظيف:
+
+* الاسم القديم
+* الصور القديمة
+* الأرقام
+* النصوص الشخصية
+
+⸻
+
+STEP 3 — Build Template UI
+
+إنشاء:
+
+* Form Section
+* Preview Section
+* Identity Layout
+
+⸻
+
+STEP 4 — Build Data Engine
+
+JavaScript:
+
+* قراءة المدخلات
+* تخزين البيانات
+* تحويلها إلى encoded data
+* إنشاء الرابط
+
+⸻
+
+STEP 5 — Build Identity Viewer
+
+عند وجود:
+
+#data=
+
+يتم:
+
+* فك البيانات
+* عرض الصفحة
+
+بدون بيانات:
+
+يعرض النموذج.
+
+⸻
+
+STEP 6 — Responsive Design
+
+اختبار:
+
+* الهاتف
+* الكمبيوتر
+* الشاشات المختلفة
+
+⸻
+
+STEP 7 — Final Luxury Design
+
+تثبيت:
+
+* المسافات
+* الخطوط
+* اللون الذهبي
+* البساطة
+
+⸻
+
+PART 9 — LEGAL PAGES
+
+الحفاظ على:
+
+privacy.html
+
+يشمل:
+
+* لا جمع بيانات
+* البيانات داخل الرابط
+
+⸻
+
+terms.html
+
+يشمل:
+
+* المستخدم مسؤول عن المحتوى
+
+⸻
+
+dmca.html
+
+يشمل:
+
+* حقوق الملكية
+* استقبال البلاغات
+
+⸻
+
+media-kit.html
+
+يشمل:
+
+* تعريف AURELIA
+* المنتج
+* التواصل
+
+⸻
+
+PART 10 — FINAL TEST CHECKLIST
+
+قبل النشر:
+
+✅ فتح الرابط بدون بيانات
+✅ ظهور النموذج
+✅ إدخال بيانات جديدة
+✅ إنشاء رابط
+✅ فتح الرابط الجديد
+✅ ظهور الهوية
+✅ عدم وجود بيانات فؤاد
+✅ عدم وجود أرقام وهمية
+✅ عدم وجود Scroll
+✅ عمل الهاتف والكمبيوتر
+
+⸻
+
+PART 11 — GITHUB DEPLOYMENT FLOW
+
+بعد الانتهاء:
+
+Terminal:
+
+git add .
+
+ثم:
+
+git commit -m "AURELIA Identity Generator v2.0"
+
+ثم:
+
+git push
+
+ثم:
+
+اختبار GitHub Pages.
+
+⸻
+
+FINAL STATUS 🔒
+
+AURELIA Identity Generator v2.0 هو:
+
+منتج رقمي ثابت، فاخر، نزيه، قابل للبيع، يعمل من رابط واحد، ويحول المعلومات الأساسية إلى هوية رقمية احترافية.
+
+لا SaaS.
+لا Backend.
+لا تعقيد.
+
+→ Generate → Share  Template → Customize
