@@ -27,8 +27,61 @@ if (dataParam) {
   initForm();
 }
 
+/* ══ PHOTO UPLOAD ═══════════════════════════ */
+let photoBase64 = '';
+
+function initUpload() {
+  const input = document.getElementById('f-photo');
+  const btn   = document.getElementById('uploadBtn');
+  const box   = document.getElementById('uploadBox');
+  const img   = document.getElementById('uploadImg');
+  const ph    = document.getElementById('uploadPlaceholder');
+
+  if (!input) return;
+
+  btn.addEventListener('click', () => input.click());
+  box.addEventListener('click', (e) => { if (e.target === box) input.click(); });
+
+  input.addEventListener('change', () => {
+    const file = input.files[0];
+    if (!file) return;
+    if (file.size > 2 * 1024 * 1024) {
+      alert('الصورة أكبر من 2MB — يرجى اختيار صورة أصغر');
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      compressImage(e.target.result, 400, 0.75, (compressed) => {
+        photoBase64 = compressed;
+        img.src = compressed;
+        img.style.display = 'block';
+        ph.style.display = 'none';
+        btn.textContent = 'تغيير الصورة';
+      });
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function compressImage(dataUrl, maxSize, quality, callback) {
+  const canvas = document.createElement('canvas');
+  const image  = new Image();
+  image.onload = () => {
+    let w = image.width, h = image.height;
+    if (w > maxSize || h > maxSize) {
+      if (w > h) { h = Math.round(h * maxSize / w); w = maxSize; }
+      else       { w = Math.round(w * maxSize / h); h = maxSize; }
+    }
+    canvas.width = w; canvas.height = h;
+    canvas.getContext('2d').drawImage(image, 0, 0, w, h);
+    callback(canvas.toDataURL('image/jpeg', quality));
+  };
+  image.src = dataUrl;
+}
+
 /* ══ FORM MODE ══════════════════════════════ */
 function initForm() {
+  initUpload();
   const form = document.getElementById('identityForm');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -46,7 +99,7 @@ function initForm() {
       name,
       title,
       location: v('f-location'),
-      photo: v('f-photo'),
+      photo: photoBase64,
       bio,
       wa: v('f-wa'),
       email: v('f-email'),

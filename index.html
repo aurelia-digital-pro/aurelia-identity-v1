@@ -49,9 +49,19 @@
             <input type="text" id="f-location" placeholder="مثال: الرياض، السعودية" />
           </div>
           <div class="field-group">
-            <label>رابط الصورة الشخصية</label>
-            <input type="url" id="f-photo" placeholder="https://example.com/photo.jpg" />
-            <small>💡 ارفع صورتك على imgbb.com أو imgur.com وانسخ الرابط</small>
+            <label>الصورة الشخصية</label>
+            <div class="upload-box" id="uploadBox">
+              <div class="upload-preview" id="uploadPreview">
+                <div class="upload-placeholder" id="uploadPlaceholder">
+                  <span class="upload-icon">📷</span>
+                  <span>اضغط لرفع صورتك</span>
+                  <small>JPG / PNG — حتى 2MB</small>
+                </div>
+                <img id="uploadImg" src="" alt="preview" style="display:none" />
+              </div>
+              <input type="file" id="f-photo" accept="image/*" style="display:none" />
+              <button type="button" class="upload-btn" id="uploadBtn">اختر صورة</button>
+            </div>
           </div>
           <div class="field-group full">
             <label>نبذة تعريفية مختصرة *</label>
