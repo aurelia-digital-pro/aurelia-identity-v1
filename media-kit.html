@@ -6,89 +6,89 @@
   <meta name="description" content="Media Kit فؤاد سندي — خيارات الرعاية والشراكة التجارية." />
   <meta name="robots" content="noindex" />
   <title>Media Kit — فؤاد سندي</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    .mk-hero{padding:10rem 0 5rem;text-align:center;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(201,168,76,.07),transparent)}
-    .mk-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:var(--ivory);margin-bottom:.6rem}
-    .mk-hero p{font-size:1.05rem;color:var(--muted);max-width:540px;margin:0 auto 2rem}
-    .mk-hero .tag{margin-bottom:1rem}
-    .identity-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem;max-width:700px;margin:3rem auto 0;text-align:right}
-    .identity-box .id-row{display:flex;align-items:center;gap:1rem;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
-    .identity-box .id-row:last-child{border:none}
-    .id-label{min-width:140px;font-size:.83rem;color:var(--muted);font-weight:600;flex-shrink:0}
-    .id-val{font-size:.9rem;color:var(--ivory)}
-    .id-val a{color:var(--gold);transition:opacity .2s}
-    .id-val a:hover{opacity:.7}
-    .audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-    .aud-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;text-align:center}
-    .aud-num{font-size:2.2rem;font-weight:900;color:var(--gold);font-family:'Cairo',sans-serif}
-    .aud-card p{font-size:.83rem;color:var(--muted);margin-top:.3rem}
-    .geo-list{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1.2rem}
-    .geo-tag{background:var(--gold-bg);border:1px solid var(--border);color:var(--gold);padding:.35rem .8rem;border-radius:8px;font-size:.8rem;font-weight:600}
-    .sponsor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-    .sponsor-card{border-radius:var(--radius);padding:2rem 1.6rem;display:flex;flex-direction:column;gap:1rem;transition:all .35s;position:relative;overflow:hidden}
-    .sp-bronze{background:linear-gradient(160deg,#1a1208,#111);border:1px solid rgba(205,127,50,.3)}
-    .sp-silver{background:linear-gradient(160deg,#14141a,#111);border:1px solid rgba(160,160,180,.3)}
-    .sp-gold{background:linear-gradient(160deg,#1a1608,#111);border:2px solid rgba(201,168,76,.4);box-shadow:0 0 40px rgba(201,168,76,.1)}
-    .sponsor-card:hover{transform:translateY(-5px)}
-    .sp-tier{font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+    .mk-hero{padding:9rem 0 4rem;text-align:center}
+    .mk-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--text);margin-bottom:.5rem}
+    .mk-tag{display:inline-block;background:var(--gold-bg);border:1px solid var(--gold-brd);color:var(--gold);font-size:.78rem;padding:.3rem .85rem;border-radius:50px;margin-bottom:1rem;font-weight:700;letter-spacing:.06em}
+    .mk-sub{font-size:.92rem;color:var(--muted);margin-bottom:2rem}
+    .id-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;max-width:680px;margin:2.5rem auto 0;text-align:right;box-shadow:var(--shadow)}
+    .id-row{display:flex;align-items:center;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--border)}
+    .id-row:last-child{border:none}
+    .id-label{min-width:130px;font-size:.8rem;color:var(--muted);font-weight:700;flex-shrink:0}
+    .id-val{font-size:.88rem;color:var(--text)}
+    .id-val a{color:var(--gold)}
+    .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2rem}
+    .aud-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;text-align:center}
+    .aud-num{font-size:2rem;font-weight:900;color:var(--gold);font-family:'Cairo',sans-serif}
+    .aud-card p{font-size:.82rem;color:var(--muted);margin-top:.3rem}
+    .geo-wrap{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1rem}
+    .geo-tag{background:var(--gold-bg);border:1px solid var(--gold-brd);color:var(--gold);padding:.3rem .8rem;border-radius:8px;font-size:.78rem;font-weight:600}
+    .sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+    .sp-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:2rem 1.6rem;display:flex;flex-direction:column;gap:1rem;transition:all .25s}
+    .sp-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+    .sp-card.gold{border-color:rgba(201,168,76,.4);background:linear-gradient(160deg,rgba(201,168,76,.04),var(--white))}
+    .sp-tier{font-size:.73rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.2rem}
     .sp-bronze .sp-tier{color:#cd7f32}
-    .sp-silver .sp-tier{color:#a0a0b4}
+    .sp-silver .sp-tier{color:#808090}
     .sp-gold .sp-tier{color:var(--gold)}
-    .sp-icon{font-size:2rem}
-    .sponsor-card h3{font-size:1.2rem;font-weight:800;color:var(--ivory)}
-    .sp-price{font-size:2rem;font-weight:900;color:var(--gold);font-family:'Cairo',sans-serif}
+    .sp-icon{font-size:1.8rem}
+    .sp-card h3{font-size:1.1rem;font-weight:800;color:var(--text)}
+    .sp-price{font-size:2rem;font-weight:900;color:var(--gold);font-family:'Cairo',sans-serif;display:inline-block}
     .sp-period{font-size:.8rem;color:var(--muted)}
-    .sp-list li{font-size:.85rem;color:var(--text);padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+    .sp-list{flex:1}
+    .sp-list li{font-size:.83rem;color:var(--sub);padding:.3rem 0;border-bottom:1px solid var(--border)}
     .sp-list li:last-child{border:none}
-    .sp-note{font-size:.75rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.05);padding-top:.8rem}
-    .mk-contact-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:3rem;text-align:center;max-width:600px;margin:0 auto}
-    .mk-contact-box h2{font-size:1.6rem;color:var(--ivory);font-weight:800;margin-bottom:.5rem}
-    .mk-contact-box p{font-size:.9rem;color:var(--muted);margin-bottom:2rem}
+    .sp-note{font-size:.73rem;color:var(--muted);padding-top:.6rem;border-top:1px solid var(--border)}
+    .sp-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.2rem;border-radius:10px;font-family:var(--ff);font-size:.88rem;font-weight:700;cursor:pointer;transition:all .25s;border:1.5px solid var(--gold);color:var(--gold);background:transparent}
+    .sp-btn:hover{background:var(--gold);color:#fff}
+    .sp-btn.primary{background:var(--gold);color:#fff}
+    .sp-btn.primary:hover{background:var(--gold-d)}
+    .mk-contact{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem;text-align:center;max-width:560px;margin:0 auto;box-shadow:var(--shadow)}
+    .mk-contact h2{font-size:1.5rem;font-weight:800;color:var(--text);margin-bottom:.5rem}
+    .mk-contact p{font-size:.88rem;color:var(--muted);margin-bottom:1.8rem}
     .mk-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-    .mk-info-note{font-size:.78rem;color:var(--muted);margin-top:1rem;opacity:.7}
-    @media(max-width:768px){
-      .audience-grid{grid-template-columns:1fr 1fr}
-      .sponsor-grid{grid-template-columns:1fr}
-    }
-    @media(max-width:480px){
-      .audience-grid{grid-template-columns:1fr}
-    }
+    .mk-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.5rem;border-radius:10px;font-family:var(--ff);font-size:.9rem;font-weight:700;cursor:pointer;transition:all .25s}
+    .mk-btn.primary{background:var(--gold);color:#fff;border:none;box-shadow:0 4px 16px rgba(201,168,76,.25)}
+    .mk-btn.primary:hover{background:var(--gold-d);transform:translateY(-2px)}
+    .mk-btn.outline{background:transparent;color:var(--gold);border:1.5px solid var(--gold)}
+    .mk-btn.outline:hover{background:var(--gold-bg)}
+    .mk-note{font-size:.75rem;color:var(--muted);margin-top:1rem}
+    @media(max-width:768px){.aud-grid{grid-template-columns:1fr 1fr}.sp-grid{grid-template-columns:1fr}.mk-btns{flex-direction:column;align-items:center}}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav scrolled" id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">♛ AURELIA</a>
+<nav class="nav shadow">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">♛</span>
+      <span class="logo-text">AURELIA <strong>ID</strong></span>
+    </a>
     <ul class="nav-links">
       <li><a href="index.html">الرئيسية</a></li>
-      <li><a href="index.html#about">من أنا</a></li>
-      <li><a href="index.html#offers">الباقات</a></li>
+      <li><a href="index.html#projects">الأعمال</a></li>
       <li><a href="index.html#contact">تواصل</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="mk-hero">
+<section class="mk-hero" style="background:var(--bg2)">
   <div class="container">
-    <span class="tag">للرعاة والشركاء</span>
+    <span class="mk-tag">للرعاة والشركاء</span>
     <h1>Media Kit الرسمي</h1>
-    <p>كل ما تحتاجه لاتخاذ قرار شراكة مدروس — الجمهور، الإحصائيات، وخيارات التعاون المتاحة.</p>
-    <a href="https://wa.me/21624764833?text=أريد%20الاستفسار%20عن%20الرعاية" target="_blank" class="btn btn-primary btn-lg">
+    <p class="mk-sub">كل ما تحتاجه لاتخاذ قرار شراكة مدروس</p>
+    <a href="https://wa.me/21624764833?text=أريد%20الاستفسار%20عن%20الرعاية" target="_blank" class="cta-btn">
       💬 تواصل للشراكة الآن
     </a>
-
-    <!-- Identity Card -->
-    <div class="identity-box">
+    <div class="id-card">
       <div class="id-row"><span class="id-label">الاسم</span><span class="id-val">فؤاد سندي — Foued Sendi</span></div>
       <div class="id-row"><span class="id-label">التخصص</span><span class="id-val">محلل مالي | استراتيجي رقمي</span></div>
       <div class="id-row"><span class="id-label">الموقع</span><span class="id-val">تونس، المغرب العربي</span></div>
-      <div class="id-row"><span class="id-label">الصفحة الرسمية</span><span class="id-val"><a href="https://aurelia-digital-pro.github.io/foued-sendi" target="_blank">aurelia-digital-pro.github.io/foued-sendi</a></span></div>
+      <div class="id-row"><span class="id-label">الصفحة الرسمية</span><span class="id-val"><a href="https://aurelia-digital-pro.github.io/aurelia-identity-v1" target="_blank">aurelia-digital-pro.github.io/aurelia-identity-v1</a></span></div>
       <div class="id-row"><span class="id-label">X / Twitter</span><span class="id-val"><a href="https://x.com/foued_sendi" target="_blank">@foued_sendi</a></span></div>
       <div class="id-row"><span class="id-label">TradingView</span><span class="id-val"><a href="https://ar.tradingview.com/script/TTi8QyP3" target="_blank">سكريبت التحليل التقني</a></span></div>
       <div class="id-row"><span class="id-label">واتساب</span><span class="id-val"><a href="https://wa.me/21624764833" target="_blank">+216 24 764 833</a></span></div>
@@ -97,193 +97,118 @@
   </div>
 </section>
 
-<!-- AUDIENCE STATS -->
-<section class="section bg-alt">
+<!-- AUDIENCE -->
+<section class="section" style="background:var(--white)">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="tag">الجمهور</span>
-      <h2>إحصائيات الجمهور</h2>
-      <p class="section-sub">جمهور متخصص ومستهدف في مجالات المال والأعمال الرقمية</p>
+    <div class="section-label">إحصائيات</div>
+    <h2 class="section-title">الجمهور والانتشار</h2>
+    <p class="section-sub">جمهور متخصص في مجالات المال والأعمال الرقمية</p>
+    <div class="aud-grid">
+      <div class="aud-card reveal"><div class="aud-num">5K+</div><p>متابع عبر المنصات</p></div>
+      <div class="aud-card reveal"><div class="aud-num">72%</div><p>جمهور عربي متخصص</p></div>
+      <div class="aud-card reveal"><div class="aud-num">85%</div><p>اهتمام بالمال والاستثمار</p></div>
     </div>
-    <div class="audience-grid">
-      <div class="aud-card reveal">
-        <div class="aud-num">5K+</div>
-        <p>متابع عبر المنصات</p>
-      </div>
-      <div class="aud-card reveal">
-        <div class="aud-num">72%</div>
-        <p>جمهور عربي متخصص</p>
-      </div>
-      <div class="aud-card reveal">
-        <div class="aud-num">85%</div>
-        <p>اهتمام بالمال والاستثمار</p>
-      </div>
-    </div>
-
-    <!-- Geography -->
-    <div class="section-head reveal" style="margin-top:3rem;margin-bottom:1rem">
-      <span class="tag">التوزيع الجغرافي</span>
-      <h2>أين يتواجد الجمهور؟</h2>
-    </div>
-    <div class="geo-list reveal">
+    <div class="geo-wrap reveal">
       <span class="geo-tag">🇹🇳 تونس — 38%</span>
       <span class="geo-tag">🇸🇦 السعودية — 18%</span>
       <span class="geo-tag">🇦🇪 الإمارات — 12%</span>
       <span class="geo-tag">🇲🇦 المغرب — 10%</span>
       <span class="geo-tag">🇩🇿 الجزائر — 9%</span>
-      <span class="geo-tag">🌍 دول أخرى — 13%</span>
-    </div>
-
-    <!-- Age & Interest -->
-    <div class="section-head reveal" style="margin-top:3rem;margin-bottom:1rem">
-      <span class="tag">الفئات والاهتمامات</span>
-      <h2>من هو الجمهور؟</h2>
-    </div>
-    <div class="audience-grid">
-      <div class="aud-card reveal">
-        <div class="aud-num">25-44</div>
-        <p>الفئة العمرية الأساسية</p>
-      </div>
-      <div class="aud-card reveal">
-        <div class="aud-num">78%</div>
-        <p>مهتمون بالأسواق المالية</p>
-      </div>
-      <div class="aud-card reveal">
-        <div class="aud-num">65%</div>
-        <p>رواد أعمال ومستقلون</p>
-      </div>
+      <span class="geo-tag">🌍 أخرى — 13%</span>
     </div>
   </div>
 </section>
 
-<!-- SPONSORSHIP TIERS -->
-<section class="section">
+<!-- SPONSORSHIP -->
+<section class="section" style="background:var(--bg2)">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="tag">مستويات الرعاية</span>
-      <h2>اختر مستوى شراكتك</h2>
-      <p class="section-sub">جميع الباقات تشمل تقرير أداء شهري وتواصل مباشر</p>
-    </div>
-    <div class="sponsor-grid">
-
-      <div class="sponsor-card sp-bronze reveal">
+    <div class="section-label">الشراكة</div>
+    <h2 class="section-title">مستويات الرعاية</h2>
+    <p class="section-sub">جميع الباقات تشمل تقرير أداء شهري</p>
+    <div class="sp-grid">
+      <div class="sp-card sp-bronze reveal">
         <div class="sp-tier">🥉 Bronze</div>
         <div class="sp-icon">⚡</div>
         <h3>الرعاية الأساسية</h3>
-        <div>
-          <span class="sp-price">$50</span>
-          <span class="sp-period">/ شهريًا</span>
-        </div>
+        <div><span class="sp-price">$50</span> <span class="sp-period">/ شهريًا</span></div>
         <ul class="sp-list">
-          <li>✓ ذكر الاسم في Footer الصفحة</li>
+          <li>✓ ذكر الاسم في Footer</li>
           <li>✓ رابط موقعك في قسم الشركاء</li>
           <li>✓ شارة "Supported by" رسمية</li>
-          <li>✓ تقرير شهري بإحصائيات الزيارات</li>
+          <li>✓ تقرير شهري بالزيارات</li>
         </ul>
-        <p class="sp-note">الحد الأدنى: شهر واحد — يمكن الإلغاء في أي وقت</p>
-        <a href="https://wa.me/21624764833?text=أريد%20الاستفسار%20عن%20رعاية%20Bronze" target="_blank" class="btn btn-outline">ابدأ الآن</a>
+        <p class="sp-note">الحد الأدنى: شهر واحد</p>
+        <a href="https://wa.me/21624764833?text=أريد%20Bronze" target="_blank" class="sp-btn">ابدأ الآن</a>
       </div>
-
-      <div class="sponsor-card sp-silver reveal">
+      <div class="sp-card sp-silver reveal">
         <div class="sp-tier">🥈 Silver</div>
         <div class="sp-icon">🎯</div>
         <h3>الرعاية المتقدمة</h3>
-        <div>
-          <span class="sp-price">$120</span>
-          <span class="sp-period">/ شهريًا</span>
-        </div>
+        <div><span class="sp-price">$120</span> <span class="sp-period">/ شهريًا</span></div>
         <ul class="sp-list">
           <li>✓ كل مزايا Bronze</li>
-          <li>✓ بطاقة Sponsor مميزة في قسم الخدمات</li>
+          <li>✓ بطاقة مميزة في قسم الخدمات</li>
           <li>✓ ذكر في منشور ترحيب على X</li>
           <li>✓ شعارك في الصفحة الرئيسية</li>
-          <li>✓ رابط do-follow لموقعك</li>
           <li>✓ تقارير تفصيلية أسبوعية</li>
         </ul>
-        <p class="sp-note">الحد الأدنى: شهران — خصم 15% للاشتراك السنوي</p>
-        <a href="https://wa.me/21624764833?text=أريد%20الاستفسار%20عن%20رعاية%20Silver" target="_blank" class="btn btn-outline">ابدأ الآن</a>
+        <p class="sp-note">الحد الأدنى: شهران</p>
+        <a href="https://wa.me/21624764833?text=أريد%20Silver" target="_blank" class="sp-btn">ابدأ الآن</a>
       </div>
-
-      <div class="sponsor-card sp-gold reveal">
+      <div class="sp-card sp-gold gold reveal">
         <div class="sp-tier">🥇 Gold — الأكثر تأثيرًا</div>
         <div class="sp-icon">♛</div>
         <h3>الرعاية الذهبية</h3>
-        <div>
-          <span class="sp-price">$250</span>
-          <span class="sp-period">/ شهريًا</span>
-        </div>
+        <div><span class="sp-price">$250</span> <span class="sp-period">/ شهريًا</span></div>
         <ul class="sp-list">
           <li>✓ كل مزايا Silver</li>
-          <li>✓ ظهور حصري في قسم Hero الرئيسي</li>
-          <li>✓ شعارك في كل صفحات الموقع</li>
-          <li>✓ بانر خاص في صفحة Media Kit</li>
-          <li>✓ منشور تعريفي مخصص على X</li>
-          <li>✓ اسمك في جميع التحليلات المنشورة</li>
-          <li>✓ اجتماع شهري مع فؤاد مباشرة</li>
-          <li>✓ حق الأولوية في تجديد الشراكة</li>
+          <li>✓ ظهور حصري في Hero</li>
+          <li>✓ شعارك في كل الصفحات</li>
+          <li>✓ منشور تعريفي على X</li>
+          <li>✓ اجتماع شهري مباشر</li>
+          <li>✓ حق الأولوية في التجديد</li>
         </ul>
-        <p class="sp-note">الحد الأدنى: 3 أشهر — خصم 20% للاشتراك السنوي</p>
-        <a href="https://wa.me/21624764833?text=أريد%20الاستفسار%20عن%20رعاية%20Gold" target="_blank" class="btn btn-primary">ابدأ الآن</a>
+        <p class="sp-note">الحد الأدنى: 3 أشهر</p>
+        <a href="https://wa.me/21624764833?text=أريد%20Gold" target="_blank" class="sp-btn primary">ابدأ الآن</a>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section bg-alt">
+<section class="section" style="background:var(--white)">
   <div class="container">
-    <div class="mk-contact-box reveal">
-      <span class="tag">تواصل للشراكة</span>
+    <div class="mk-contact reveal">
+      <span class="mk-tag">تواصل للشراكة</span>
       <h2>جاهز للتعاون؟</h2>
-      <p>أرسل رسالة مباشرة عبر واتساب أو البريد الإلكتروني وسأرد خلال 24 ساعة بمقترح شراكة مخصص لعلامتك التجارية.</p>
+      <p>أرسل رسالة وسأرد خلال 24 ساعة بمقترح مخصص لعلامتك التجارية.</p>
       <div class="mk-btns">
-        <a href="https://wa.me/21624764833?text=أريد%20الاستفسار%20عن%20الرعاية" target="_blank" class="btn btn-primary btn-lg">
-          💬 واتساب +216 24 764 833
-        </a>
-        <a href="mailto:fouedsendi-85@gmail.com?subject=استفسار%20رعاية%20AURELIA" class="btn btn-outline btn-lg">
-          ✉ fouedsendi-85@gmail.com
-        </a>
+        <a href="https://wa.me/21624764833?text=استفسار%20رعاية" target="_blank" class="mk-btn primary">💬 واتساب</a>
+        <a href="mailto:fouedsendi-85@gmail.com?subject=استفسار%20رعاية" class="mk-btn outline">✉ البريد</a>
       </div>
-      <p class="mk-info-note">
-        جميع بيانات الرعاية سرية — نعمل وفق اتفاقية سرية (NDA) عند الطلب.
-      </p>
+      <p class="mk-note">يمكن توقيع اتفاقية سرية (NDA) عند الطلب.</p>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">♛ AURELIA</a>
-        <p>هوية رقمية احترافية فاخرة<br />One Link. Lasting Impression.</p>
-      </div>
-      <div class="footer-links">
-        <h4>روابط</h4>
-        <a href="index.html">الرئيسية</a>
-        <a href="index.html#services">الخدمات</a>
-        <a href="index.html#offers">الباقات</a>
-        <a href="index.html#contact">تواصل</a>
-      </div>
-      <div class="footer-links">
-        <h4>قانوني</h4>
-        <a href="privacy.html">سياسة الخصوصية</a>
-        <a href="terms.html">شروط الاستخدام</a>
-        <a href="dmca.html">حماية المحتوى</a>
-      </div>
-      <div class="footer-contact">
-        <h4>تواصل</h4>
-        <a href="https://wa.me/21624764833" target="_blank">💬 واتساب</a>
-        <a href="mailto:fouedsendi-85@gmail.com">✉ البريد</a>
-        <a href="https://x.com/foued_sendi" target="_blank">𝕏 تويتر</a>
-      </div>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">♛</span>
+      <span class="logo-text">AURELIA <strong>ID</strong></span>
+      <p>One Link. Lasting Impression.</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 فؤاد سندي — AURELIA Identity. جميع الحقوق محفوظة.</p>
+    <div class="footer-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="index.html#contact">تواصل</a>
+    </div>
+    <div class="footer-legal">
+      <a href="privacy.html">الخصوصية</a>
+      <a href="terms.html">الشروط</a>
+      <a href="dmca.html">DMCA</a>
     </div>
   </div>
+  <div class="footer-copy">© 2026 فؤاد سندي — AURELIA Identity. جميع الحقوق محفوظة.</div>
 </footer>
 
 <script src="script.js"></script>

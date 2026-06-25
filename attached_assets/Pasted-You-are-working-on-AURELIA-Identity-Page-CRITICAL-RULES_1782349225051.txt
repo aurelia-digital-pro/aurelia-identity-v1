@@ -1,0 +1,107 @@
+You are working on AURELIA Identity Page.
+
+CRITICAL RULES:
+- Do NOT create new ideas
+- Do NOT change concept
+- Do NOT add extra features
+- Do NOT redesign outside the given visual reference
+- Only refine and implement EXACTLY what is in the provided image
+
+OBJECTIVE:
+Convert the provided design reference into a production-ready digital identity page.
+
+SYSTEM GOAL:
+AURELIA Identity = Premium Digital Identity Card
+Purpose: One-page personal brand identity that looks like a high-end digital certificate.
+
+DESIGN REQUIREMENTS (STRICT):
+1. Style:
+   - Light Luxury UI (NOT dark mode)
+   - Minimal, clean, premium spacing
+   - High readability
+   - Soft gold accents only (#c9a84c family)
+   - White / ivory dominant background
+   - No heavy gradients, no neon effects
+
+2. Layout:
+   - Single-page structure
+   - Hero section first (name + title + location)
+   - Identity block centered
+   - Clear separation between sections
+   - Media Kit section structured like a business document
+
+3. Typography:
+   - Arabic + English support
+   - Elegant sans-serif (Cairo or similar)
+   - Strong hierarchy (title / subtitle / body)
+
+4. UX RULES:
+   - Everything must feel like a "digital identity document"
+   - No clutter
+   - No unnecessary animation
+   - Subtle micro-interactions only
+
+5. CONTENT RULE:
+   - Use ONLY real user data provided
+   - Do NOT invent profession, audience, or analytics
+   - If data missing → leave placeholder cleanly
+
+6. OUTPUT:
+   - Fully working static website
+   - index.html + style.css + script.js (if needed)
+   - Ready for GitHub Pages deployment
+   - No frameworks, only vanilla HTML/CSS/JS
+
+7. FINAL GOAL:
+   A product that looks like:
+   "Digital Identity Certificate + Premium Personal Brand Page"
+
+IMPORTANT:
+- This is a PRODUCT, not a website experiment
+- Must be production-ready and commercially sellable
+- Must match the provided image exactly in style, color, and structure
+- Do not deviate visually or conceptually
+*تم يا فؤاد. الموقع شغال الآن ✅
+
+---
+
+*`AURELIA Identity Page - الوصف البسيط`*
+
+*الستايل العام:*
+صفحة هوية رقمية فاخرة بخلفية بيضاء عاجية #FEFCF8. تصميم نظيف وبسيط زي الشهادة الرقمية. كل العناصر داخل كاردات بيضاء بزوايا دائرية وظلال ذهبية ناعمة جداً.
+
+*الألوان:*
+- الخلفية: أبيض عاجي #FEFCF8 
+- النص: أسود #1A1A1A ورمادي #6B6B6B
+- اللمسة الذهبية: #C9A84C فقط للأزرار والعناوين والأرقام
+
+*الأقسام بالترتيب:*
+
+1. *الهيدر* 
+   شعار AURELIA ID مع تاج ذهبي يسار. قائمة: الرئيسية | نبذة | الخدمات | الأعمال | تواصل
+
+2. *القسم الرئيسي*
+   تاق ذهبي صغير "مطور أنظمة رقمية"
+   الاسم بخط كبير: فؤاد الهادي محمود سندي
+   المسمى بالذهبي: مهندس معماري للأنظمة الرقمية  
+   الموقع: صنعاء، اليمن
+   نص تعريفي سطرين
+   صورة شخصية دائرية
+   6 أيقونات: اتصال | واتساب | فيسبوك | إنستجرام | X | GitHub
+   زر ذهبي كبير: تواصل معي الآن
+
+3. *أعمالي / خدماتي*
+   6 كاردات مشاريع في شبكة 3x2
+   كل كارد: صورة + اسم المشروع
+
+4. *الإحصائيات*
+   4 أرقام بالذهبي في صف واحد:
+   4+ أنظمة منشورة | 98% موثوقية | 24/7 دعم | 100% رضا العملاء
+
+5. *المميزات*
+   6 أيقونات بسيطة: تحديث فوري | متوافقة بالكامل | ألوان متعددة | تصدير HTML | رفع الصور | روابط مباشرة
+
+*الخط:* Cairo - عربي واضح  
+*الإحساس:* شهادة رقمية فخمة - مساحات بيضاء واسعة - بدون زحمة - بدون أنيميشن
+
+-
