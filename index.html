@@ -11,8 +11,8 @@
 </head>
 <body>
 
-<!-- ══ FORM MODE (يظهر عند فتح الرابط بدون بيانات) ══ -->
-<div id="formMode">
+<!-- ══ FORM MODE ═════════════════════════════════════════════════ -->
+<div id="formMode" style="display:none">
 
   <nav class="nav">
     <div class="nav-wrap">
@@ -29,26 +29,16 @@
     </div>
   </div>
 
+  <div class="form-scroll-area">
   <div class="form-wrap">
     <form id="identityForm">
 
-      <!-- ═══ الهوية الأساسية ═══ -->
+      <!-- 01 — الهوية الأساسية -->
       <div class="form-section">
         <h2 class="fs-title"><span>01</span> الهوية الشخصية</h2>
         <div class="fields-grid">
-          <div class="field-group">
-            <label>الاسم الكامل *</label>
-            <input type="text" id="f-name" placeholder="مثال: أحمد محمد علي" required />
-          </div>
-          <div class="field-group">
-            <label>المسمى الوظيفي / التخصص *</label>
-            <input type="text" id="f-title" placeholder="مثال: مصمم جرافيك | مطور ويب" required />
-          </div>
-          <div class="field-group">
-            <label>الموقع الجغرافي</label>
-            <input type="text" id="f-location" placeholder="مثال: الرياض، السعودية" />
-          </div>
-          <div class="field-group">
+
+          <div class="field-group photo-upload-group">
             <label>الصورة الشخصية</label>
             <div class="upload-box" id="uploadBox">
               <div class="upload-preview" id="uploadPreview">
@@ -63,21 +53,35 @@
               <button type="button" class="upload-btn" id="uploadBtn">اختر صورة</button>
             </div>
           </div>
-          <div class="field-group full">
-            <label>نبذة تعريفية مختصرة *</label>
-            <textarea id="f-bio" rows="3" placeholder="اكتب جملة أو جملتين تعريف عنك باحترافية..." required></textarea>
+
+          <div class="field-group">
+            <label>الاسم الكامل *</label>
+            <input type="text" id="f-name" placeholder="مثال: أحمد محمد علي" required />
           </div>
+          <div class="field-group">
+            <label>المسمى المهني *</label>
+            <input type="text" id="f-title" placeholder="مثال: مصمم جرافيك | مطور ويب" required />
+          </div>
+          <div class="field-group">
+            <label>المدينة / الدولة</label>
+            <input type="text" id="f-location" placeholder="مثال: الرياض، السعودية" />
+          </div>
+          <div class="field-group full">
+            <label>نبذة تعريفية (سطران كحد أقصى) *</label>
+            <textarea id="f-bio" rows="2" maxlength="180" placeholder="اكتب جملة أو جملتين تعريف عنك باحترافية..." required></textarea>
+            <small id="bio-count">0 / 180 حرف</small>
+          </div>
+
         </div>
       </div>
 
-      <!-- ═══ التواصل ═══ -->
+      <!-- 02 — التواصل -->
       <div class="form-section">
-        <h2 class="fs-title"><span>02</span> معلومات التواصل</h2>
+        <h2 class="fs-title"><span>02</span> روابط التواصل</h2>
         <div class="fields-grid">
           <div class="field-group">
             <label>واتساب</label>
-            <input type="text" id="f-wa" placeholder="21624764833 (بدون + أو 00)" />
-            <small>أرقام فقط — مثال: 21624764833</small>
+            <input type="text" id="f-wa" placeholder="21624764833 (أرقام فقط)" />
           </div>
           <div class="field-group">
             <label>البريد الإلكتروني</label>
@@ -96,41 +100,41 @@
             <input type="url" id="f-web" placeholder="https://yourwebsite.com" />
           </div>
           <div class="field-group">
-            <label>رقم الهاتف (للاتصال)</label>
+            <label>رقم الهاتف (اختياري)</label>
             <input type="text" id="f-phone" placeholder="+216 24 764 833" />
           </div>
         </div>
       </div>
 
-      <!-- ═══ الخدمات ═══ -->
+      <!-- 03 — الخدمات -->
       <div class="form-section">
         <h2 class="fs-title"><span>03</span> خدماتي (3 خدمات)</h2>
         <div class="services-inputs">
-          <div class="service-input-row" data-svc="1">
+          <div class="service-input-row">
             <span class="svc-num">١</span>
             <div class="svc-fields">
               <input type="text" id="s1-title" placeholder="اسم الخدمة — مثال: تصميم الهوية البصرية" />
-              <textarea id="s1-desc" rows="2" placeholder="وصف مختصر للخدمة..."></textarea>
+              <textarea id="s1-desc" rows="2" placeholder="وصف مختصر..."></textarea>
             </div>
           </div>
-          <div class="service-input-row" data-svc="2">
+          <div class="service-input-row">
             <span class="svc-num">٢</span>
             <div class="svc-fields">
               <input type="text" id="s2-title" placeholder="اسم الخدمة — مثال: تطوير المواقع" />
-              <textarea id="s2-desc" rows="2" placeholder="وصف مختصر للخدمة..."></textarea>
+              <textarea id="s2-desc" rows="2" placeholder="وصف مختصر..."></textarea>
             </div>
           </div>
-          <div class="service-input-row" data-svc="3">
+          <div class="service-input-row">
             <span class="svc-num">٣</span>
             <div class="svc-fields">
               <input type="text" id="s3-title" placeholder="اسم الخدمة — مثال: الاستشارات" />
-              <textarea id="s3-desc" rows="2" placeholder="وصف مختصر للخدمة..."></textarea>
+              <textarea id="s3-desc" rows="2" placeholder="وصف مختصر..."></textarea>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ═══ الأعمال ═══ -->
+      <!-- 04 — المشاريع -->
       <div class="form-section">
         <h2 class="fs-title"><span>04</span> أعمالي (3 مشاريع)</h2>
         <div class="projects-inputs">
@@ -177,161 +181,136 @@
         </div>
       </div>
 
-      <!-- ═══ زر الإنشاء ═══ -->
+      <!-- زر الإنشاء -->
       <div class="form-submit">
         <button type="submit" class="gen-btn">
           <span class="btn-icon">♛</span>
           أنشئ هويتي الرقمية الآن
         </button>
-        <p class="form-note">سيتم إنشاء رابط خاص بك — انسخه وشاركه مع أي شخص</p>
+        <p class="form-note">سيتم إنشاء رابط خاص بك — انسخه وشاركه فوراً</p>
       </div>
 
     </form>
   </div>
+  </div><!-- /form-scroll-area -->
 
-  <!-- FEATURES -->
-  <div class="gen-features">
-    <div class="container">
-      <div class="gf-grid">
-        <div class="gf-item">
-          <span>🆓</span>
-          <strong>مجاناً تماماً</strong>
-          <p>لا اشتراك، لا دفع، لا حساب</p>
-        </div>
-        <div class="gf-item">
-          <span>⚡</span>
-          <strong>فوري</strong>
-          <p>رابطك جاهز في ثوانٍ</p>
-        </div>
-        <div class="gf-item">
-          <span>🔒</span>
-          <strong>خصوصية كاملة</strong>
-          <p>بياناتك في رابطك فقط — لا خوادم</p>
-        </div>
-        <div class="gf-item">
-          <span>📱</span>
-          <strong>يعمل على كل الأجهزة</strong>
-          <p>هاتف، تابلت، كمبيوتر</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-copy">
-      <span class="logo-icon">♛</span>
-      AURELIA Identity Generator v2.0 — © 2026 جميع الحقوق محفوظة
-      <br /><small><a href="privacy.html">الخصوصية</a> · <a href="terms.html">الشروط</a> · <a href="dmca.html">DMCA</a></small>
-    </div>
+  <footer class="form-footer">
+    <span class="logo-icon">♛</span>
+    AURELIA Identity Generator v2.0 — © 2026
+    · <a href="privacy.html">الخصوصية</a>
+    · <a href="terms.html">الشروط</a>
   </footer>
 
 </div><!-- /formMode -->
 
-<!-- ══ VIEW MODE (يظهر عند فتح رابط #data=...) ══ -->
+<!-- ══ VIEW MODE — 100VH NO SCROLL ════════════════════════════════ -->
 <div id="viewMode" style="display:none">
 
-  <nav class="nav nav-view">
-    <div class="nav-wrap">
-      <span class="logo"><span class="logo-icon">♛</span> AURELIA <strong>ID</strong></span>
-      <div class="nav-view-actions">
-        <a href="index.html" class="nav-edit-btn">✏ أنشئ هويتك</a>
-        <button class="nav-share-btn" id="shareBtn">🔗 نسخ الرابط</button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="v-hero">
-    <div class="container v-hero-grid">
-      <div class="v-hero-content">
-        <span class="hero-tag" id="v-tag">✦ هوية رقمية احترافية</span>
-        <h1 class="hero-name" id="v-name">—</h1>
-        <p class="hero-title" id="v-title">—</p>
-        <p class="hero-loc" id="v-loc" style="display:none">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span id="v-loc-text"></span>
-        </p>
-        <p class="hero-desc" id="v-bio">—</p>
-        <div class="hero-socials" id="v-socials"></div>
-        <div id="v-cta-wrap"></div>
-      </div>
-      <div class="hero-photo-wrap">
-        <div class="photo-ring">
-          <div class="photo-circle">
-            <img id="v-photo" src="" alt="صورة شخصية" onerror="this.style.display='none';document.getElementById('v-avatar-fb').style.display='flex'" />
-            <div class="avatar-fallback" id="v-avatar-fb"></div>
-          </div>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="tb-clocks">
+        <div class="tb-clock">
+          <span class="tb-flag">🇹🇳</span>
+          <span class="tb-city">تونس</span>
+          <span class="tb-time" id="clock-tn">--:--</span>
         </div>
-        <div class="photo-badge">هوية رقمية ✦</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="v-section v-alt" id="v-services-sec" style="display:none">
-    <div class="container">
-      <div class="section-label">الخدمات</div>
-      <div class="v-services-grid" id="v-services"></div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="v-section" id="v-projects-sec" style="display:none">
-    <div class="container">
-      <div class="section-label">الأعمال</div>
-      <div class="v-projects-grid" id="v-projects"></div>
-    </div>
-  </section>
-
-  <!-- STRENGTHS (ثابتة) -->
-  <section class="v-section v-alt strengths-sec">
-    <div class="container">
-      <div class="section-label">المميزات</div>
-      <div class="strengths-grid">
-        <div class="str-card">
-          <div class="str-icon">🆓</div>
-          <h4>استضافة مجانية</h4>
-          <p>يعمل على GitHub Pages بدون أي تكلفة</p>
-        </div>
-        <div class="str-card">
-          <div class="str-icon">📱</div>
-          <h4>تصميم متجاوب</h4>
-          <p>متوافق مع الهاتف والتابلت والكمبيوتر</p>
-        </div>
-        <div class="str-card">
-          <div class="str-icon">⚡</div>
-          <h4>تحديث فوري</h4>
-          <p>تعديل البيانات وإنشاء رابط جديد فوراً</p>
-        </div>
-        <div class="str-card">
-          <div class="str-icon">🔗</div>
-          <h4>روابط مباشرة</h4>
-          <p>واتساب، إيميل، شبكات اجتماعية في مكان واحد</p>
+        <div class="tb-divider"></div>
+        <div class="tb-clock">
+          <span class="tb-flag">🇺🇸</span>
+          <span class="tb-city">نيويورك</span>
+          <span class="tb-time" id="clock-ny">--:--</span>
         </div>
       </div>
+      <div class="tb-brand">
+        <span class="logo-icon">♛</span> AURELIA
+      </div>
+      <div class="tb-actions">
+        <a href="index.html" class="tb-btn-outline">+ أنشئ هويتك</a>
+        <button class="tb-btn-gold" id="shareBtn">🔗 مشاركة</button>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- CONTACT -->
-  <section class="v-section" id="v-contact-sec">
-    <div class="container">
-      <div class="section-label">تواصل</div>
-      <div class="v-contact-grid" id="v-contacts"></div>
+  <!-- MAIN IDENTITY PANEL -->
+  <div class="id-panel">
+
+    <!-- LEFT — الصورة الشخصية -->
+    <aside class="id-photo-col">
+      <div class="id-photo-ring">
+        <div class="id-photo-circle">
+          <img id="v-photo" src="" alt="صورة شخصية"
+               onerror="this.style.display='none';document.getElementById('v-avatar-fb').style.display='flex'" />
+          <div class="avatar-fallback" id="v-avatar-fb"></div>
+        </div>
+      </div>
+      <div class="id-photo-badge">✦ هوية رقمية</div>
+    </aside>
+
+    <!-- RIGHT — المعلومات -->
+    <main class="id-info-col">
+      <span class="id-tag">AURELIA Digital Identity</span>
+      <h1 class="id-name" id="v-name">—</h1>
+      <p class="id-title" id="v-title">—</p>
+      <p class="id-loc" id="v-loc" style="display:none">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span id="v-loc-text"></span>
+      </p>
+      <p class="id-bio" id="v-bio">—</p>
+
+      <div class="id-socials" id="v-socials"></div>
+
+      <div id="v-cta-wrap"></div>
+    </main>
+
+  </div><!-- /id-panel -->
+
+  <!-- BOTTOM STRIP: Services + Projects + Strengths -->
+  <div class="id-strip">
+
+    <!-- SERVICES -->
+    <div class="strip-col" id="v-services-col" style="display:none">
+      <div class="strip-label">الخدمات</div>
+      <div class="strip-cards" id="v-services"></div>
     </div>
-  </section>
 
-  <!-- FOOTER VIEW -->
-  <footer class="footer">
-    <div class="footer-copy">
-      <span class="logo-icon">♛</span>
-      تم إنشاء هذه الهوية بـ AURELIA Identity Generator
-      <br />
-      <a href="index.html" class="footer-gen-link">أنشئ هويتك المجانية الآن ←</a>
-      <br /><small><a href="privacy.html">الخصوصية</a> · <a href="terms.html">الشروط</a></small>
+    <!-- PROJECTS -->
+    <div class="strip-col" id="v-projects-col" style="display:none">
+      <div class="strip-label">الأعمال</div>
+      <div class="strip-cards" id="v-projects"></div>
     </div>
-  </footer>
 
-  <!-- SHARE TOAST -->
+    <!-- STRENGTHS (Fixed) -->
+    <div class="strip-col">
+      <div class="strip-label">المميزات</div>
+      <div class="strip-cards">
+        <div class="strip-card str-card">
+          <span>🆓</span>
+          <div><strong>استضافة مجانية</strong><p>GitHub Pages</p></div>
+        </div>
+        <div class="strip-card str-card">
+          <span>📱</span>
+          <div><strong>تصميم متجاوب</strong><p>كل الأجهزة</p></div>
+        </div>
+        <div class="strip-card str-card">
+          <span>⚡</span>
+          <div><strong>تحديث فوري</strong><p>عبر الرابط</p></div>
+        </div>
+        <div class="strip-card str-card">
+          <span>🔗</span>
+          <div><strong>روابط مباشرة</strong><p>تواصل فوري</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /id-strip -->
+
+  <!-- CONTACT ROW -->
+  <div class="id-contact-row" id="v-contacts"></div>
+
+  <!-- TOAST -->
   <div class="toast" id="toast">✓ تم نسخ الرابط!</div>
 
 </div><!-- /viewMode -->

@@ -115,7 +115,8 @@ function generateIdentityLink() {
 ══════════════════════════════════════════ */
 function renderIdentity(data) {
   document.getElementById('formMode').style.display = 'none';
-  document.getElementById('viewMode').style.display = 'block';
+  document.getElementById('viewMode').style.display = 'grid';
+  startClocks();
 
   /* — الاسم والمسمى والنبذة — */
   setText('v-name',  data.fullName || '—');
@@ -147,37 +148,11 @@ function renderIdentity(data) {
   /* — الروابط الاجتماعية — */
   buildSocials(data.socials || {});
 
-  /* — الخدمات — */
-  if (data.services && data.services.length > 0) {
-    document.getElementById('v-services-sec').style.display = 'block';
-    document.getElementById('v-services').innerHTML =
-      data.services.map(s => `
-        <div class="v-svc-card reveal">
-          <h3>${esc(s.title)}</h3>
-          ${s.description ? `<p>${esc(s.description)}</p>` : ''}
-        </div>
-      `).join('');
-  }
+  /* — الخدمات (strip) — */
+  renderServicesStrip(data.services);
 
-  /* — المشاريع — */
-  if (data.projects && data.projects.length > 0) {
-    document.getElementById('v-projects-sec').style.display = 'block';
-    document.getElementById('v-projects').innerHTML =
-      data.projects.map(p => `
-        <div class="proj-card reveal">
-          <div class="proj-thumb">
-            ${p.image
-              ? `<img src="${esc(p.image)}" alt="${esc(p.name)}"
-                      onerror="this.parentElement.innerHTML='<div class=proj-ph>📁</div>'" />`
-              : `<div class="proj-ph">📁</div>`}
-          </div>
-          <div class="proj-body">
-            <h3>${esc(p.name)}</h3>
-            ${p.description ? `<p>${esc(p.description)}</p>` : ''}
-          </div>
-        </div>
-      `).join('');
-  }
+  /* — المشاريع (strip) — */
+  renderProjectsStrip(data.projects);
 
   /* — بطاقات التواصل — */
   buildContactCards(data.socials || {});
@@ -287,6 +262,19 @@ function compressImage(dataUrl, maxSize, quality, callback) {
 ══════════════════════════════════════════ */
 function initForm() {
   initUpload();
+
+  /* Bio character counter */
+  const bioEl    = document.getElementById('f-bio');
+  const countEl  = document.getElementById('bio-count');
+  if (bioEl && countEl) {
+    bioEl.addEventListener('input', () => {
+      const len = bioEl.value.length;
+      countEl.textContent = `${len} / 180 حرف`;
+      countEl.style.color = len > 160 ? '#c0392b' : '';
+    });
+  }
+
+  /* Form submit */
   const form = document.getElementById('identityForm');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -398,6 +386,67 @@ function liIcon() {
 }
 function webIcon() {
   return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>`;
+}
+
+/* ══════════════════════════════════════════
+   TOP BAR — Live Clocks
+   Tunisia (UTC+1) · New York (America/New_York)
+══════════════════════════════════════════ */
+function startClocks() {
+  function updateClocks() {
+    const now = new Date();
+
+    const tn = now.toLocaleTimeString('en-GB', {
+      timeZone: 'Africa/Tunis',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+    });
+    const ny = now.toLocaleTimeString('en-GB', {
+      timeZone: 'America/New_York',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+    });
+
+    const tnEl = document.getElementById('clock-tn');
+    const nyEl = document.getElementById('clock-ny');
+    if (tnEl) tnEl.textContent = tn;
+    if (nyEl) nyEl.textContent = ny;
+  }
+
+  updateClocks();
+  setInterval(updateClocks, 1000);
+}
+
+/* ══════════════════════════════════════════
+   RENDER: services in strip format
+══════════════════════════════════════════ */
+function renderServicesStrip(services) {
+  const col = document.getElementById('v-services-col');
+  const wrap = document.getElementById('v-services');
+  if (!col || !wrap || !services || !services.length) return;
+  col.style.display = 'block';
+  wrap.innerHTML = services.map(s => `
+    <div class="strip-card reveal">
+      <strong>${esc(s.title)}</strong>
+      ${s.description ? `<p>${esc(s.description)}</p>` : ''}
+    </div>
+  `).join('');
+}
+
+/* ══════════════════════════════════════════
+   RENDER: projects in strip format
+══════════════════════════════════════════ */
+function renderProjectsStrip(projects) {
+  const col = document.getElementById('v-projects-col');
+  const wrap = document.getElementById('v-projects');
+  if (!col || !wrap || !projects || !projects.length) return;
+  col.style.display = 'block';
+  wrap.innerHTML = projects.map(p => `
+    <div class="strip-card reveal">
+      ${p.image ? `<img src="${esc(p.image)}" class="proj-strip-thumb" alt="${esc(p.name)}"
+         onerror="this.style.display='none'" />` : ''}
+      <strong>${esc(p.name)}</strong>
+      ${p.description ? `<p>${esc(p.description)}</p>` : ''}
+    </div>
+  `).join('');
 }
 
 /* ══════════════════════════════════════════

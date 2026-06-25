@@ -1,0 +1,255 @@
+.
+
+⸻
+
+PART 5 — FINAL CODING STEPS ⚙️
+
+AURELIA Identity Generator v2.0
+
+REPLY FOR IMPLEMENTATION AGENT
+
+⸻
+
+IMPORTANT CONTEXT
+
+You are implementing:
+
+AURELIA Identity Generator v2.0
+
+Rules:
+
+* Static website only
+* No backend
+* No database
+* No frameworks
+* Pure HTML + CSS + JS
+* GitHub Pages deployment
+
+⸻
+
+1. INITIAL CLEANUP
+
+You MUST:
+
+* Remove all existing personal data
+* Remove all static profile content
+* Remove all numbers, claims, fake stats
+* Convert page into empty template system
+
+Result: clean blank identity generator
+
+⸻
+
+2. APP STRUCTURE
+
+Single page application:
+
+* index.html only main interface
+* Two states:
+
+STATE A:
+
+No data → Show FORM
+
+STATE B:
+
+Has data → Show GENERATED IDENTITY
+
+⸻
+
+3. UI RULES (STRICT)
+
+* Height: 100vh only
+* No scroll allowed
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+* Light Luxury design
+* White background
+* Gold accent #C9A961
+* Black text
+* Minimal modern UI
+
+⸻
+
+4. PAGE LAYOUT
+
+TOP BAR
+
+* Time (Tunisia)
+* Time (New York)
+* Weather placeholder
+
+⸻
+
+MAIN SECTION
+
+LEFT:
+
+* Profile image upload (circle)
+
+RIGHT:
+
+* Full Name
+* Title
+* Bio (max 2 lines)
+* Social links
+* Create button
+
+⸻
+
+SERVICES SECTION
+
+* 3 cards only
+* Empty inputs
+* Title + description
+
+⸻
+
+PROJECTS SECTION
+
+* 3 cards only
+* Image + name + description
+
+⸻
+
+STRENGTH SECTION
+
+Fixed 4 items:
+
+* Free Hosting (GitHub Pages)
+* Responsive Design
+* Instant Update via link
+* Direct Contact Links
+
+⸻
+
+5. CORE DATA SYSTEM
+
+STEP 1: Collect Data
+
+collectFormData()
+
+⸻
+
+STEP 2: Build JSON
+
+{
+  profile,
+  socials,
+  services,
+  projects
+}
+
+⸻
+
+STEP 3: Encode
+
+JSON.stringify(data)
+btoa(string)
+
+⸻
+
+STEP 4: Generate Link
+
+Format:
+
+/#data=BASE64_STRING
+
+⸻
+
+6. URL LOGIC
+
+On page load:
+
+* If #data exists:
+    * decode base64
+    * parse JSON
+    * render identity
+    * hide form
+* If no data:
+    * show form
+    * hide identity view
+
+⸻
+
+7. DECODING
+
+atob(data)
+JSON.parse(decoded)
+
+⸻
+
+8. RENDER SYSTEM
+
+Function:
+
+renderIdentity(data)
+
+Must display:
+
+* Profile image
+* Name
+* Title
+* Bio
+* Social links
+* Services (3)
+* Projects (3)
+
+⸻
+
+9. CREATE BUTTON FLOW
+
+On click:
+
+1. Validate inputs
+2. Build JSON
+3. Encode to Base64
+4. Update URL with #data=
+5. Switch to identity view
+
+⸻
+
+10. STATE MANAGEMENT
+
+if (hashDataExists) {
+  showIdentity()
+} else {
+  showForm()
+}
+
+⸻
+
+11. PERFORMANCE RULES
+
+* No backend
+* No external libraries
+* No API calls
+* Fully client-side only
+
+⸻
+
+12. DEPLOYMENT
+
+git add .
+git commit -m "AURELIA Identity Generator v2.0"
+git push
+
+Deploy via GitHub Pages.
+
+⸻
+
+FINAL BEHAVIOR
+
+System must behave as:
+
+User → Fill Form → Generate Link → Share Identity Page
+
+⸻
+
+🔒 END OF IMPLEMENTATION REPLY
+
+⸻
