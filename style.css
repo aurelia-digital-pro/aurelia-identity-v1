@@ -213,6 +213,20 @@ input,textarea,button,select{font-family:var(--ff)}
 }
 .upload-btn:hover{background:var(--gold-bg)}
 
+/* Project Upload */
+.proj-upload-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.proj-upload-btn{
+  background:var(--gold-bg);border:1px solid var(--gold-br);
+  color:var(--gold);font-family:var(--ff);font-size:.78rem;font-weight:700;
+  padding:.4rem .9rem;border-radius:8px;cursor:pointer;
+  transition:all var(--tr);flex-shrink:0;
+}
+.proj-upload-btn:hover{background:var(--gold);color:#fff}
+.proj-thumb-mini{
+  width:48px;height:48px;object-fit:cover;
+  border-radius:6px;border:1px solid var(--gold-br);
+}
+
 /* Submit */
 .form-submit{
   text-align:center;padding:1.5rem 0 3rem;

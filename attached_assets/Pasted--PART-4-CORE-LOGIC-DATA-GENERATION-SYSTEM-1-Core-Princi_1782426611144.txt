@@ -1,0 +1,174 @@
+⸻
+
+PART 4 — CORE LOGIC & DATA GENERATION SYSTEM
+
+1. النظام الأساسي (Core Principle)
+
+AURELIA Identity Generator يعمل كـ:
+
+Client-Side Static System
+
+يعتمد بالكامل على:
+
+* HTML
+* CSS
+* JavaScript
+* Browser Storage Logic (بدون Backend)
+
+⸻
+
+1. مبدأ عمل البيانات
+
+كل البيانات يتم:
+
+* إدخالها من المستخدم عبر النموذج
+* تحويلها إلى JSON Object
+* ترميزها إلى Base64
+* تخزينها داخل الرابط
+
+⸻
+
+1. شكل البيانات قبل الترميز
+
+{
+  "profileImage": "",
+  "fullName": "",
+  "title": "",
+  "location": "",
+  "bio": "",
+  "socials": {
+    "whatsapp": "",
+    "email": "",
+    "x": "",
+    "linkedin": "",
+    "website": "",
+    "phone": ""
+  },
+  "services": [
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "",
+      "description": ""
+    }
+  ],
+  "projects": [
+    {
+      "image": "",
+      "name": "",
+      "description": ""
+    },
+    {
+      "image": "",
+      "name": "",
+      "description": ""
+    },
+    {
+      "image": "",
+      "name": "",
+      "description": ""
+    }
+  ]
+}
+
+⸻
+
+1. نظام الترميز (Encoding System)
+
+الخطوات:
+
+1. تحويل البيانات إلى JSON String
+2. تطبيق Base64 Encoding
+3. إدراج الناتج داخل الرابط
+
+⸻
+
+1. شكل الرابط النهائي
+
+https://domain.com/#data=BASE64_ENCODED_STRING
+
+⸻
+
+1. نظام القراءة (Decoding System)
+
+عند فتح الصفحة:
+
+الخطوات:
+
+1. فحص URL
+2. التحقق من وجود #data=
+3. استخراج البيانات المشفرة
+4. فك Base64
+5. تحويلها إلى JSON
+6. عرض الهوية مباشرة
+
+⸻
+
+1. منطق التشغيل (App Flow)
+
+الحالة 1 — بدون بيانات
+
+إذا لم يوجد #data:
+
+* عرض نموذج الإدخال فقط
+* إخفاء قسم الهوية
+
+⸻
+
+الحالة 2 — مع بيانات
+
+إذا وجد #data:
+
+* إخفاء النموذج
+* عرض الهوية مباشرة
+* تحميل البيانات في UI
+
+⸻
+
+1. وظائف JavaScript الأساسية
+
+وظائف مطلوبة:
+
+* collectFormData()
+* generateIdentityLink()
+* encodeData(data)
+* decodeData(hash)
+* renderIdentity(data)
+* checkURLState()
+
+⸻
+
+1. قيود النظام
+
+❌ لا Backend
+❌ لا Database
+❌ لا API
+❌ لا تسجيل مستخدمين
+❌ لا تسجيل دخول
+
+⸻
+
+1. مبدأ الأمان
+
+* البيانات لا تُخزن في السيرفر
+* كل شيء داخل الرابط فقط
+* المستخدم مسؤول عن بياناته
+* لا تتبع ولا تحليل خارجي
+
+⸻
+
+1. الهدف التقني النهائي
+
+تحقيق نظام:
+
+Zero Backend Identity Generator
+
+يعمل بالكامل داخل المتصفح ويولد هوية قابلة للمشاركة عبر رابط واحد.
+
+⸻
