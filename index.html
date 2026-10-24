@@ -1,79 +1,261 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AURELIA Identity Generator - MVP</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="left">Generator v2.0</div>
-    <div class="right">ID <strong>AURELIA</strong></div>
-  </header>
-
-  <main class="container">
-    <button id="startBtn" class="primary">أنشئ هويتك الآن</button>
-
-    <h1>AURELIA Identity Generator</h1>
-    <p class="subtitle">أدخل بياناتك وستحصل على رابط هوية رقمية جاهز للمشاركة فوراً</p>
-
-    <section class="card">
-      <h2>الهوية الشخصية <span class="badge">01</span></h2>
-
-      <label class="upload-box" for="profileInput" id="profileBox">
-        <input id="profileInput" type="file" accept="image/*" />
-        <div class="upload-inner">
-          <div class="camera">📷</div>
-          <div>اضغط لرفع صورتك</div>
-          <small>JPG / PNG — حتى 2MB</small>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AURELIA Identity</title>
+    <meta name="description" content="بطاقة هوية رقمية احترافية لشخصك أو نشاطك" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="formMode" aria-live="polite">
+      <header class="nav">
+        <div class="nav-wrap">
+          <div class="logo" aria-label="AURELIA logo">
+            <span class="logo-icon">A</span>
+            <strong>AURELIA</strong>
+          </div>
+          <span class="nav-badge">Identity</span>
         </div>
-      </label>
+      </header>
 
-      <div class="field">
-        <label>الاسم الكامل *</label>
-        <input id="fullName" placeholder="مثال: أحمد محمد علي" />
-      </div>
-
-      <div class="field">
-        <label>اسم المتجر / العرض</label>
-        <input id="storeName" placeholder="مثال: متجر أحمد" />
-      </div>
-
-      <div class="actions-row">
-        <button id="saveProfile" class="primary">حفظ الهوية</button>
-        <button id="clearProfile" class="muted">مسح</button>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>المنتجات</h2>
-
-      <div class="field">
-        <label>أضف منتجاً جديداً</label>
-        <input id="productTitle" placeholder="عنوان المنتج" />
-        <textarea id="productDesc" placeholder="وصف قصير"></textarea>
-        <input id="productPrice" placeholder="السعر" type="number" />
-        <input id="productImage" type="file" accept="image/*" />
-        <div class="actions-row">
-          <button id="addProduct" class="primary">أضِف المنتج</button>
-          <button id="clearProducts" class="muted">مسح الكل</button>
+      <div class="form-hero">
+        <div class="fh-inner">
+          <span class="form-tag">AURELIA IDENTITY</span>
+          <h1>أنشئ بطاقتك الرقمية</h1>
+          <p>بطاقة شخصية ومهنية جاهزة للمشاركة، مع رابط عام قابل للمشاركة من الهاتف أو الحاسوب.</p>
         </div>
       </div>
 
-      <div id="productsList" class="products-list"></div>
+      <div class="form-scroll-area">
+        <form id="identityForm" class="form-wrap" novalidate>
+          <section class="form-section">
+            <div class="fs-title"><span>1</span> الهوية الشخصية</div>
+            <div class="fields-grid">
+              <div class="field-group photo-upload-group">
+                <label>صورة الملف الشخصي</label>
+                <div class="upload-box" role="button" tabindex="0" aria-label="رفع صورة شخصية">
+                  <div class="upload-preview">
+                    <img id="uploadImg" alt="معاينة الصورة" hidden />
+                    <div id="uploadPlaceholder" class="upload-placeholder">
+                      <div class="upload-icon">📷</div>
+                      <span>اضغط لرفع صورتك</span>
+                      <small>JPG / PNG حتى 2MB</small>
+                    </div>
+                  </div>
+                  <button type="button" id="uploadBtn" class="upload-btn">اختيار الصورة</button>
+                  <input id="f-photo" type="file" accept="image/*" hidden />
+                </div>
+              </div>
 
-      <div class="actions-row">
-        <button id="exportBtn" class="primary">تنزيل بيانات (.json)</button>
-        <input id="importFile" type="file" accept="application/json" style="display:none" />
-        <button id="importBtn" class="muted">استعادة بيانات (.json)</button>
+              <div class="field-group">
+                <label for="f-name">الاسم الكامل</label>
+                <input id="f-name" type="text" placeholder="مثال: أحمد محمد علي" maxlength="60" />
+              </div>
+
+              <div class="field-group">
+                <label for="f-title">المسمى المهني</label>
+                <input id="f-title" type="text" placeholder="مثال: مصمم هوية بصرية" maxlength="80" />
+              </div>
+
+              <div class="field-group">
+                <label for="f-location">الموقع / المدينة</label>
+                <input id="f-location" type="text" placeholder="مثال: تونس / الرياض" maxlength="80" />
+              </div>
+
+              <div class="field-group full">
+                <label for="f-bio">نبذة مختصرة</label>
+                <textarea id="f-bio" rows="4" maxlength="180" placeholder="اكتب نبذة مختصرة عنك أو مهنتك..."></textarea>
+                <div id="bio-count" class="bio-count">0 / 180 حرف</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="fs-title"><span>2</span> التواصل</div>
+            <div class="fields-grid">
+              <div class="field-group">
+                <label for="f-wa">واتساب</label>
+                <input id="f-wa" type="text" placeholder="966500000000" />
+              </div>
+              <div class="field-group">
+                <label for="f-phone">الهاتف</label>
+                <input id="f-phone" type="text" placeholder="966500000000" />
+              </div>
+              <div class="field-group">
+                <label for="f-email">البريد الإلكتروني</label>
+                <input id="f-email" type="email" placeholder="name@example.com" />
+              </div>
+              <div class="field-group">
+                <label for="f-x">X / Twitter</label>
+                <input id="f-x" type="text" placeholder="username" />
+              </div>
+              <div class="field-group">
+                <label for="f-li">LinkedIn</label>
+                <input id="f-li" type="text" placeholder="linkedin.com/in/username" />
+              </div>
+              <div class="field-group">
+                <label for="f-web">الموقع الإلكتروني</label>
+                <input id="f-web" type="url" placeholder="https://example.com" />
+              </div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="fs-title"><span>3</span> الخدمات</div>
+            <div class="services-inputs">
+              <div class="service-input-row">
+                <div class="svc-num">1</div>
+                <div class="svc-fields">
+                  <input id="s1-title" type="text" placeholder="عنوان الخدمة" maxlength="50" />
+                  <textarea id="s1-desc" rows="2" placeholder="وصف الخدمة" maxlength="120"></textarea>
+                </div>
+              </div>
+
+              <div class="service-input-row">
+                <div class="svc-num">2</div>
+                <div class="svc-fields">
+                  <input id="s2-title" type="text" placeholder="عنوان الخدمة" maxlength="50" />
+                  <textarea id="s2-desc" rows="2" placeholder="وصف الخدمة" maxlength="120"></textarea>
+                </div>
+              </div>
+
+              <div class="service-input-row">
+                <div class="svc-num">3</div>
+                <div class="svc-fields">
+                  <input id="s3-title" type="text" placeholder="عنوان الخدمة" maxlength="50" />
+                  <textarea id="s3-desc" rows="2" placeholder="وصف الخدمة" maxlength="120"></textarea>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="fs-title"><span>4</span> الأعمال والمشاريع</div>
+            <div class="projects-inputs">
+              <div class="project-input-row">
+                <div class="svc-num">1</div>
+                <div class="svc-fields">
+                  <div class="proj-upload-row">
+                    <button type="button" id="p1-img-btn" class="proj-upload-btn">اختر صورة</button>
+                    <input id="p1-img-file" type="file" accept="image/*" hidden />
+                    <img id="p1-img-preview" class="proj-thumb-mini" alt="معاينة المشروع" hidden />
+                  </div>
+                  <input id="p1-name" type="text" placeholder="اسم المشروع" maxlength="60" />
+                  <textarea id="p1-desc" rows="2" placeholder="وصف المشروع" maxlength="120"></textarea>
+                </div>
+              </div>
+
+              <div class="project-input-row">
+                <div class="svc-num">2</div>
+                <div class="svc-fields">
+                  <div class="proj-upload-row">
+                    <button type="button" id="p2-img-btn" class="proj-upload-btn">اختر صورة</button>
+                    <input id="p2-img-file" type="file" accept="image/*" hidden />
+                    <img id="p2-img-preview" class="proj-thumb-mini" alt="معاينة المشروع" hidden />
+                  </div>
+                  <input id="p2-name" type="text" placeholder="اسم المشروع" maxlength="60" />
+                  <textarea id="p2-desc" rows="2" placeholder="وصف المشروع" maxlength="120"></textarea>
+                </div>
+              </div>
+
+              <div class="project-input-row">
+                <div class="svc-num">3</div>
+                <div class="svc-fields">
+                  <div class="proj-upload-row">
+                    <button type="button" id="p3-img-btn" class="proj-upload-btn">اختر صورة</button>
+                    <input id="p3-img-file" type="file" accept="image/*" hidden />
+                    <img id="p3-img-preview" class="proj-thumb-mini" alt="معاينة المشروع" hidden />
+                  </div>
+                  <input id="p3-name" type="text" placeholder="اسم المشروع" maxlength="60" />
+                  <textarea id="p3-desc" rows="2" placeholder="وصف المشروع" maxlength="120"></textarea>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="form-submit">
+            <button type="button" id="saveDraftBtn" class="btn-secondary">حفظ مؤقت</button>
+            <button type="submit" class="gen-btn"><span class="btn-icon">✦</span> إنشاء رابط الهوية</button>
+            <button type="button" id="downloadJsonBtn" class="btn-secondary">تصدير JSON</button>
+            <button type="button" id="importJsonBtn" class="btn-secondary">استيراد JSON</button>
+            <input id="importJsonInput" type="file" accept="application/json" hidden />
+            <button type="button" id="clearBtn" class="btn-muted">مسح</button>
+            <div class="form-note">يتم حفظ بياناتك محلياً في هذا المتصفح، ويمكنك مشاركة الرابط العام مباشرة.</div>
+          </div>
+        </form>
       </div>
+
+      <footer class="form-footer">
+        <span class="logo-icon">A</span> AURELIA IDENTITY · <a href="#">Privacy</a>
+      </footer>
     </section>
 
-  </main>
+    <section id="viewMode" aria-live="polite" style="display:none;">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <div class="tb-clocks">
+            <div class="tb-clock"><span class="tb-flag">🇹🇳</span><span id="clock-tn" class="tb-time">--:--:--</span></div>
+            <div class="tb-divider"></div>
+            <div class="tb-clock"><span class="tb-flag">🇺🇸</span><span id="clock-ny" class="tb-time">--:--:--</span></div>
+          </div>
 
-  <footer class="browser-bar">aurelia-digital-pro.github.io</footer>
+          <div class="tb-brand"><span class="logo-icon">A</span> AURELIA</div>
 
-  <script src="script.js"></script>
-</body>
+          <div class="tb-actions">
+            <button type="button" id="copyLinkBtn" class="tb-btn-outline">نسخ الرابط</button>
+            <button type="button" id="editBtn" class="tb-btn-gold">تعديل</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="id-panel">
+        <div class="id-photo-col">
+          <div class="id-photo-ring">
+            <div class="id-photo-circle">
+              <img id="v-photo" alt="الصورة الشخصية" hidden />
+              <div id="v-avatar-fb" class="avatar-fallback">A</div>
+            </div>
+          </div>
+          <div class="id-photo-badge">AURELIA ID</div>
+        </div>
+
+        <div class="id-info-col">
+          <div class="id-tag">IDENTITY</div>
+          <h1 id="v-name" class="id-name">اسمك</h1>
+          <div id="v-title" class="id-title">مسمّاك المهني</div>
+          <div id="v-loc" class="id-loc" style="display:none;">
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="14" height="14" fill="currentColor"><path d="M12 2a7 7 0 017 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 017-7zm0 9.5A2.5 2.5 0 1012 6a2.5 2.5 0 000 5.5z"/></svg>
+            <span id="v-loc-text"></span>
+          </div>
+          <p id="v-bio" class="id-bio"></p>
+          <div id="v-socials" class="id-socials"></div>
+          <div id="v-cta-wrap"></div>
+        </div>
+      </main>
+
+      <div id="v-services-col" class="id-strip" style="display:none;">
+        <div class="strip-col">
+          <div class="strip-label">SERVICES</div>
+          <div id="v-services" class="strip-cards"></div>
+        </div>
+      </div>
+
+      <div id="v-projects-col" class="id-strip" style="display:none;">
+        <div class="strip-col">
+          <div class="strip-label">PROJECTS</div>
+          <div id="v-projects" class="strip-cards"></div>
+        </div>
+      </div>
+
+      <div class="id-contact-row" id="v-contacts"></div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">تم النسخ</div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
